@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vermont - SELT Legislative History</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Frank+Ruhl+Libre:wght@400;500&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background: linear-gradient(135deg, #00abce 0%, #73a535 100%);
+            min-height: 100vh;
+            color: #333;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 40px;
+            color: white;
+        }
+
+        .header h1 {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+
+        .back-btn {
+            display: inline-block;
+            padding: 12px 24px;
+            background: rgba(255,255,255,0.2);
+            color: white;
+            text-decoration: none;
+            border-radius: 25px;
+            margin-bottom: 20px;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255,255,255,0.3);
+            transition: all 0.3s ease;
+        }
+
+        .back-btn:hover {
+            background: rgba(255,255,255,0.3);
+            transform: translateY(-2px);
+        }
+
+        .content-card {
+            background: rgba(255,255,255,0.95);
+            border-radius: 20px;
+            padding: 30px;
+            margin-bottom: 30px;
+            backdrop-filter: blur(10px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        }
+
+        .summary-stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin-bottom: 30px;
+        }
+
+        .stat-card {
+            background: linear-gradient(135deg, #00abce, #73a535);
+            color: white;
+            padding: 20px;
+            border-radius: 15px;
+            text-align: center;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+
+        .stat-card:nth-child(2) {
+            background: linear-gradient(135deg, #925333, #73a535);
+        }
+
+        .stat-card:nth-child(3) {
+            background: linear-gradient(135deg, #00abce, #925333);
+        }
+
+        .stat-card:nth-child(4) {
+            background: linear-gradient(135deg, #73a535, #00abce);
+        }
+
+        .stat-number {
+            font-size: 2em;
+            font-weight: bold;
+            display: block;
+        }
+
+        .timeline {
+            position: relative;
+            padding: 20px 0;
+        }
+
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 30px;
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background: linear-gradient(to bottom, #00abce, #73a535);
+        }
+
+        .timeline-item {
+            position: relative;
+            margin-bottom: 30px;
+            padding-left: 80px;
+        }
+
+        .timeline-year {
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, #00abce, #73a535);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: bold;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+
+        .timeline-content {
+            background: #f8f9fa;
+            padding: 20px;
+            border-radius: 15px;
+            border-left: 4px solid #00abce;
+        }
+
+        .activity-badge {
+            display: inline-block;
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-size: 0.9em;
+            margin: 5px 5px 5px 0;
+            font-weight: 500;
+        }
+
+        .enacted { background: #d4edda; color: #155724; }
+        .failed { background: #f8d7da; color: #721c24; }
+        .rescinded { background: #fff3cd; color: #856404; }
+        .no-activity { background: #e9ecef; color: #6c757d; }
+
+        .forms-list {
+            margin-top: 15px;
+        }
+
+        .form-item {
+            background: white;
+            padding: 15px;
+            margin: 10px 0;
+            border-radius: 10px;
+            border-left: 4px solid #00abce;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        .form-code {
+            font-weight: bold;
+            color: #00abce;
+        }
+
+        .form-name {
+            color: #666;
+            font-size: 0.9em;
+        }
+
+        @media (max-width: 768px) {
+            .container { padding: 15px; }
+            .header h1 { font-size: 2em; }
+            .timeline-item { padding-left: 70px; }
+            .timeline-year { width: 50px; height: 50px; font-size: 0.9em; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <a href="../index.html" class="back-btn">← Back to Map</a>
+            <h1>🏔️ Vermont Legislative History</h1>
+            <p>Pioneer of Social Enterprise Legislation</p>
+        </div>
+
+        <div class="content-card">
+            <h2>📊 Summary Statistics</h2>
+            <div class="summary-stats">
+                <div class="stat-card">
+                    <span class="stat-number">2</span>
+                    <span>Forms Currently Available</span>
+                </div>
+                <div class="stat-card">
+                    <span class="stat-number">0</span>
+                    <span>Failed Attempts</span>
+                </div>
+                <div class="stat-card">
+                    <span class="stat-number">0</span>
+                    <span>Rescinded Forms</span>
+                </div>
+                <div class="stat-card">
+                    <span class="stat-number">2009</span>
+                    <span>First Activity</span>
+                </div>
+            </div>
+
+            <h3>🏢 Currently Available Corporate Forms</h3>
+            <div class="forms-list">
+                <div class="form-item">
+                    <div class="form-code">L3C - Low-profit Limited Liability Company</div>
+                    <div class="form-name">Vermont Low-Profit Limited Liability Company Act</div>
+                </div>
+                <div class="form-item">
+                    <div class="form-code">BCORP - Benefit Corporation</div>
+                    <div class="form-name">Vermont Benefit Corporation</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="content-card">
+            <h2>📅 Legislative Timeline</h2>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-year">2009</div>
+                    <div class="timeline-content">
+                        <h4>L3C Pioneer</h4>
+                        <span class="activity-badge enacted">✅ L3C Enacted</span>
+                        <p>Vermont becomes one of the first 6 states to enact Low-profit Limited Liability Company legislation, joining Illinois, Louisiana, Michigan, Utah, and Wyoming in pioneering this new corporate form.</p>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-year">2010</div>
+                    <div class="timeline-content">
+                        <h4>First Benefit Corporation in the US</h4>
+                        <span class="activity-badge enacted">✅ BCORP Enacted</span>
+                        <p><strong>Historic Milestone:</strong> Vermont becomes the very first state in the United States to enact benefit corporation legislation, establishing the template that would be adopted by 45+ other states over the following decade.</p>
+                        <p><em>Vermont now offers both L3C and BCORP forms</em></p>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-year">2024</div>
+                    <div class="timeline-content">
+                        <h4>Current Status</h4>
+                        <span class="activity-badge no-activity">⚪ No New Activity</span>
+                        <p>Vermont maintains both L3C and BCORP forms established in 2009-2010. As the pioneer of benefit corporation legislation, Vermont continues to lead by example with mature, well-established social enterprise laws.</p>
+                        <p><em>Vermont remains a leader in social enterprise legislation innovation</em></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="content-card">
+            <h2>📋 Vermont's Pioneering Role</h2>
+            <p><strong>Historic Significance:</strong> Vermont holds the unique distinction of being the first state to enact benefit corporation legislation in 2010, establishing the legal framework that would spread to 45+ other states over the next decade.</p>
+            
+            <p><strong>Early Adoption:</strong> Vermont was also among the first wave of states (2009) to authorize L3C entities, demonstrating consistent leadership in social enterprise legislation.</p>
+            
+            <p><strong>Legislative Leadership:</strong> Vermont's early adoption of both major social enterprise forms (L3C and BCORP) positioned the state as a testing ground for social enterprise legal frameworks that proved successful nationwide.</p>
+            
+            <p><strong>Business Impact:</strong> Vermont's dual-form approach provides entrepreneurs and social enterprises with flexible options - L3C for mission-driven ventures focused on charitable purposes, and BCORP for businesses pursuing general public benefit.</p>
+            
+            <p><strong>National Influence:</strong> Vermont's benefit corporation model served as the foundation for the Model Benefit Corporation Legislation that was subsequently adopted across the United States.</p>
+        </div>
+    </div>
+</body>
+</html>

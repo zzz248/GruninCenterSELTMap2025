@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arizona - SELT Legislative History</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Frank+Ruhl+Libre:wght@400;500&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background: linear-gradient(135deg, #00abce 0%, #73a535 100%);
+            min-height: 100vh;
+            color: #333;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 40px;
+            color: white;
+        }
+
+        .header h1 {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+
+        .back-btn {
+            display: inline-block;
+            padding: 12px 24px;
+            background: rgba(255,255,255,0.2);
+            color: white;
+            text-decoration: none;
+            border-radius: 25px;
+            margin-bottom: 20px;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255,255,255,0.3);
+            transition: all 0.3s ease;
+        }
+
+        .back-btn:hover {
+            background: rgba(255,255,255,0.3);
+            transform: translateY(-2px);
+        }
+
+        .content-card {
+            background: rgba(255,255,255,0.95);
+            border-radius: 20px;
+            padding: 30px;
+            margin-bottom: 30px;
+            backdrop-filter: blur(10px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        }
+
+        .summary-stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin-bottom: 30px;
+        }
+
+        .stat-card {
+            background: linear-gradient(135deg, #00abce, #73a535);
+            color: white;
+            padding: 20px;
+            border-radius: 15px;
+            text-align: center;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+
+        .stat-card:nth-child(2) {
+            background: linear-gradient(135deg, #925333, #73a535);
+        }
+
+        .stat-card:nth-child(3) {
+            background: linear-gradient(135deg, #00abce, #925333);
+        }
+
+        .stat-card:nth-child(4) {
+            background: linear-gradient(135deg, #73a535, #00abce);
+        }
+
+        .stat-number {
+            font-size: 2em;
+            font-weight: bold;
+            display: block;
+        }
+
+        .timeline {
+            position: relative;
+            padding: 20px 0;
+        }
+
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 30px;
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background: linear-gradient(to bottom, #00abce, #73a535);
+        }
+
+        .timeline-item {
+            position: relative;
+            margin-bottom: 30px;
+            padding-left: 80px;
+        }
+
+        .timeline-year {
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, #00abce, #73a535);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: bold;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+
+        .timeline-content {
+            background: #f8f9fa;
+            padding: 20px;
+            border-radius: 15px;
+            border-left: 4px solid #00abce;
+        }
+
+        .activity-badge {
+            display: inline-block;
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-size: 0.9em;
+            margin: 5px 5px 5px 0;
+            font-weight: 500;
+        }
+
+        .enacted { background: #d4edda; color: #155724; }
+        .no-activity { background: #e9ecef; color: #6c757d; }
+
+        .forms-list {
+            margin-top: 15px;
+        }
+
+        .form-item {
+            background: white;
+            padding: 15px;
+            margin: 10px 0;
+            border-radius: 10px;
+            border-left: 4px solid #00abce;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        .form-code {
+            font-weight: bold;
+            color: #00abce;
+        }
+
+        .form-name {
+            color: #666;
+            font-size: 0.9em;
+        }
+
+        @media (max-width: 768px) {
+            .container { padding: 15px; }
+            .header h1 { font-size: 2em; }
+            .timeline-item { padding-left: 70px; }
+            .timeline-year { width: 50px; height: 50px; font-size: 0.9em; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <a href="../index.html" class="back-btn">← Back to Map</a>
+            <h1>🌵 Arizona Legislative History</h1>
+            <p>Grand Canyon State's Social Enterprise Path</p>
+        </div>
+
+        <div class="content-card">
+            <h2>📊 Summary Statistics</h2>
+            <div class="summary-stats">
+                <div class="stat-card">
+                    <span class="stat-number">1</span>
+                    <span>Form Currently Available</span>
+                </div>
+                <div class="stat-card">
+                    <span class="stat-number">0</span>
+                    <span>Failed Attempts</span>
+                </div>
+                <div class="stat-card">
+                    <span class="stat-number">0</span>
+                    <span>Rescinded Forms</span>
+                </div>
+                <div class="stat-card">
+                    <span class="stat-number">2013</span>
+                    <span>First Activity</span>
+                </div>
+            </div>
+
+            <h3>🏢 Currently Available Corporate Forms</h3>
+            <div class="forms-list">
+                <div class="form-item">
+                    <div class="form-code">BCORP - Benefit Corporation</div>
+                    <div class="form-name">Arizona Benefit Corporation Act</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="content-card">
+            <h2>📅 Legislative Timeline</h2>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-year">2013</div>
+                    <div class="timeline-content">
+                        <h4>Early Benefit Corporation Adoption</h4>
+                        <span class="activity-badge enacted">✅ BCORP Enacted</span>
+                        <p><strong>Pioneer State:</strong> Arizona joins the first wave of benefit corporation adopters in 2013, demonstrating early recognition of the importance of legal structures for mission-driven businesses.</p>
+                        <p>This positions Arizona as a forward-thinking jurisdiction for social enterprises in the Southwest.</p>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-year">2024</div>
+                    <div class="timeline-content">
+                        <h4>Current Status - Established Framework</h4>
+                        <span class="activity-badge no-activity">⚪ No New Activity</span>
+                        <p>Arizona maintains its benefit corporation legislation established in 2013. With over a decade of experience, Arizona has developed a mature legal framework for social enterprises.</p>
+                        <p><em>Arizona continues to be a reliable jurisdiction for mission-driven businesses in the Southwest</em></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="content-card">
+            <h2>📋 Arizona's Social Enterprise Leadership</h2>
+            <p><strong>Early Adopter:</strong> Arizona was among the first wave of states to enact benefit corporation legislation in 2013, demonstrating the state's commitment to innovation and supporting mission-driven businesses.</p>
+            
+            <p><strong>Southwest Leadership:</strong> Arizona's early adoption helped establish the Southwest as a region supportive of social enterprise activity, paving the way for other states in the region.</p>
+            
+            <p><strong>Business Innovation:</strong> Arizona's business-friendly environment, combined with benefit corporation legislation, creates an attractive ecosystem for entrepreneurs seeking to build companies that balance profit with social and environmental impact.</p>
+            
+            <p><strong>Mature Framework:</strong> With over a decade of experience, Arizona has developed institutional knowledge and legal precedents that provide certainty for benefit corporations operating in the state.</p>
+            
+            <p><strong>Economic Development:</strong> The availability of benefit corporation status supports Arizona's technology and innovation sectors, attracting mission-driven businesses and impact investors to the state.</p>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Washington - SELT Legislative History</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Frank+Ruhl+Libre:wght@400;500&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background: linear-gradient(135deg, #00abce 0%, #73a535 100%);
+            min-height: 100vh;
+            color: #333;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 40px;
+            color: white;
+        }
+
+        .header h1 {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+
+        .back-btn {
+            display: inline-block;
+            padding: 12px 24px;
+            background: rgba(255,255,255,0.2);
+            color: white;
+            text-decoration: none;
+            border-radius: 25px;
+            margin-bottom: 20px;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255,255,255,0.3);
+            transition: all 0.3s ease;
+        }
+
+        .back-btn:hover {
+            background: rgba(255,255,255,0.3);
+            transform: translateY(-2px);
+        }
+
+        .content-card {
+            background: rgba(255,255,255,0.95);
+            border-radius: 20px;
+            padding: 30px;
+            margin-bottom: 30px;
+            backdrop-filter: blur(10px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        }
+
+        .summary-stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin-bottom: 30px;
+        }
+
+        .stat-card {
+            background: linear-gradient(135deg, #00abce, #73a535);
+            color: white;
+            padding: 20px;
+            border-radius: 15px;
+            text-align: center;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+
+        .stat-card:nth-child(2) {
+            background: linear-gradient(135deg, #925333, #73a535);
+        }
+
+        .stat-card:nth-child(3) {
+            background: linear-gradient(135deg, #00abce, #925333);
+        }
+
+        .stat-card:nth-child(4) {
+            background: linear-gradient(135deg, #73a535, #00abce);
+        }
+
+        .stat-number {
+            font-size: 2em;
+            font-weight: bold;
+            display: block;
+        }
+
+        .timeline {
+            position: relative;
+            padding: 20px 0;
+        }
+
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 30px;
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background: linear-gradient(to bottom, #00abce, #73a535);
+        }
+
+        .timeline-item {
+            position: relative;
+            margin-bottom: 30px;
+            padding-left: 80px;
+        }
+
+        .timeline-year {
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, #00abce, #73a535);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: bold;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+
+        .timeline-content {
+            background: #f8f9fa;
+            padding: 20px;
+            border-radius: 15px;
+            border-left: 4px solid #00abce;
+        }
+
+        .activity-badge {
+            display: inline-block;
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-size: 0.9em;
+            margin: 5px 5px 5px 0;
+            font-weight: 500;
+        }
+
+        .enacted { background: #d4edda; color: #155724; }
+        .no-activity { background: #e9ecef; color: #6c757d; }
+
+        .forms-list {
+            margin-top: 15px;
+        }
+
+        .form-item {
+            background: white;
+            padding: 15px;
+            margin: 10px 0;
+            border-radius: 10px;
+            border-left: 4px solid #00abce;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        .form-code {
+            font-weight: bold;
+            color: #00abce;
+        }
+
+        .form-name {
+            color: #666;
+            font-size: 0.9em;
+        }
+
+        .unique-badge {
+            background: linear-gradient(135deg, #925333, #73a535);
+            color: white;
+            padding: 8px 15px;
+            border-radius: 20px;
+            font-size: 0.9em;
+            font-weight: 600;
+            margin: 10px 0;
+            display: inline-block;
+        }
+
+        @media (max-width: 768px) {
+            .container { padding: 15px; }
+            .header h1 { font-size: 2em; }
+            .timeline-item { padding-left: 70px; }
+            .timeline-year { width: 50px; height: 50px; font-size: 0.9em; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <a href="../index.html" class="back-btn">← Back to Map</a>
+            <h1>🌲 Washington Legislative History</h1>
+            <p>Pacific Northwest Social Enterprise Leader</p>
+        </div>
+
+        <div class="content-card">
+            <h2>📊 Summary Statistics</h2>
+            <div class="summary-stats">
+                <div class="stat-card">
+                    <span class="stat-number">2</span>
+                    <span>Forms Currently Available</span>
+                </div>
+                <div class="stat-card">
+                    <span class="stat-number">0</span>
+                    <span>Failed Attempts</span>
+                </div>
+                <div class="stat-card">
+                    <span class="stat-number">0</span>
+                    <span>Rescinded Forms</span>
+                </div>
+                <div class="stat-card">
+                    <span class="stat-number">2012</span>
+                    <span>First Activity</span>
+                </div>
+            </div>
+
+            <div class="unique-badge">🏆 Fourth and Final SPC State</div>
+
+            <h3>🏢 Currently Available Corporate Forms</h3>
+            <div class="forms-list">
+                <div class="form-item">
+                    <div class="form-code">SPC - Social Purpose Corporation</div>
+                    <div class="form-name">An Act Relating to Social Purpose Corporations</div>
+                </div>
+                <div class="form-item">
+                    <div class="form-code">BCORP - Benefit Corporation</div>
+                    <div class="form-name">Washington Benefit Corporation</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="content-card">
+            <h2>📅 Legislative Timeline</h2>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-year">2012</div>
+                    <div class="timeline-content">
+                        <h4>Social Purpose Corporation Pioneer</h4>
+                        <span class="activity-badge enacted">✅ SPC Enacted</span>
+                        <p><strong>Historic Achievement:</strong> Washington becomes the second state (after California) to enact Social Purpose Corporation legislation, joining the exclusive group of states offering this innovative corporate form.</p>
+                        <p>Washington's SPC legislation provides businesses with flexible structures for pursuing both profit and social/environmental purposes.</p>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-year">2015</div>
+                    <div class="timeline-content">
+                        <h4>Benefit Corporation Addition</h4>
+                        <span class="activity-badge enacted">✅ BCORP Enacted</span>
+                        <p><strong>Comprehensive Framework:</strong> Washington adds benefit corporation legislation, becoming one of only 4 states to offer both SPC and BCORP forms, providing maximum flexibility for social enterprises.</p>
+                        <p>This dual approach positions Washington as a leader in comprehensive social enterprise legislation on the West Coast.</p>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-year">2024</div>
+                    <div class="timeline-content">
+                        <h4>Current Status</h4>
+                        <span class="activity-badge no-activity">⚪ No New Activity</span>
+                        <p>Washington maintains both SPC and BCORP forms, continuing to be one of only 4 states offering Social Purpose Corporation legislation. The state provides a comprehensive social enterprise legal framework for Pacific Northwest businesses.</p>
+                        <p><em>Washington completes the exclusive group of SPC states alongside California, Florida, and Texas</em></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="content-card">
+            <h2>📋 Washington's Strategic Position</h2>
+            <p><strong>Exclusive SPC State:</strong> Washington is one of only 4 states nationwide (with California, Florida, and Texas) to offer Social Purpose Corporation legislation, providing unique competitive advantages for social enterprises seeking flexible corporate structures.</p>
+            
+            <p><strong>Pacific Northwest Leadership:</strong> Washington serves as the regional leader for social enterprise legislation in the Pacific Northwest, offering sophisticated legal frameworks that attract mission-driven businesses to the region.</p>
+            
+            <p><strong>Technology Hub Advantage:</strong> Washington's dual-form approach aligns perfectly with the state's reputation as a technology and innovation center, providing the legal infrastructure needed by mission-driven tech companies and social impact startups.</p>
+            
+            <p><strong>Business Environment:</strong> The combination of SPC and BCORP options, alongside Washington's business-friendly environment and lack of state income tax, creates an attractive ecosystem for social enterprises and impact investors.</p>
+            
+            <p><strong>Environmental Focus:</strong> Washington's social enterprise legislation supports the state's strong environmental commitment by providing legal structures for businesses pursuing environmental sustainability and climate impact goals.</p>
+            
+            <p><strong>Complete West Coast Coverage:</strong> Together with California, Washington ensures that the entire West Coast has access to both SPC and BCORP legislation, creating a contiguous region of advanced social enterprise legal infrastructure.</p>
+        </div>
+    </div>
+</body>
+</html>
