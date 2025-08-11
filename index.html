@@ -908,8 +908,8 @@
                     content += `<p><em>No legislative activity this year</em></p>`;
                 }
 
-                content += `
-                        <button onclick="window.open('states/${stateCode.toLowerCase()}.html', '_blank')" 
+content += `
+                        <button onclick="window.open('states/` + stateCode.toLowerCase() + `.html', '_blank')" 
                                 class="history-btn">
                           View Complete Legislative History
                         </button>
