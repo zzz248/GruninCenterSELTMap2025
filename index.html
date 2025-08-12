@@ -35,34 +35,36 @@
         .grunin-branding {
             display: flex;
             align-items: center;
-            justify-content: center;
-            gap: 20px;
-            margin-bottom: 20px;
+            justify-content: flex-start;
+            gap: 30px;
+            margin-bottom: 30px;
+            width: 100%;
         }
 
         .grunin-logo-img {
-            width: 180px;
+            width: 300px;
             height: auto;
             border-radius: 10px;
             box-shadow: 0 5px 15px rgba(0,0,0,0.2);
             background: white;
-            padding: 15px;
+            padding: 20px;
         }
 
         .grunin-title {
             text-align: left;
+            flex: 1;
         }
 
         .grunin-name {
-            font-size: 1.4em;
+            font-size: 1.8em;
             font-weight: 600;
-            margin-bottom: 5px;
+            margin-bottom: 8px;
             color: white;
             text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
         }
 
         .grunin-subtitle {
-            font-size: 1em;
+            font-size: 1.3em;
             font-weight: 400;
             color: rgba(255,255,255,0.9);
             font-family: 'Frank Ruhl Libre', serif;
@@ -177,12 +179,62 @@
             font-size: 1.1em;
         }
 
+        .reports-content {
+            display: flex;
+            gap: 40px;
+            align-items: flex-start;
+        }
+
+        .reports-main {
+            flex: 2;
+        }
+
         .reports-grid {
             display: flex;
             flex-direction: column;
             gap: 15px;
             margin-top: 20px;
-            max-width: 400px;
+            max-width: none;
+        }
+
+        .tepper-fellows-info {
+            flex: 1;
+            background: rgba(115, 165, 53, 0.1);
+            border-radius: 15px;
+            padding: 25px;
+            border-left: 4px solid #73a535;
+            min-width: 300px;
+        }
+
+        .tepper-fellows-info h3 {
+            color: #925333;
+            font-size: 1.3em;
+            font-weight: 600;
+            margin-bottom: 15px;
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        .tepper-fellows-info p {
+            color: #555;
+            line-height: 1.6;
+            margin-bottom: 20px;
+            font-family: 'Frank Ruhl Libre', serif;
+            font-size: 1em;
+        }
+
+        .tepper-link {
+            display: inline-block;
+            color: #73a535;
+            text-decoration: none;
+            font-weight: 500;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 0.95em;
+            transition: color 0.3s ease;
+        }
+
+        .tepper-link:hover {
+            color: #925333;
+            text-decoration: underline;
         }
 
         .report-link {
@@ -264,37 +316,48 @@
         }
 
         .stats-summary {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            display: flex;
+            flex-direction: column;
             gap: 20px;
             margin-bottom: 20px;
         }
 
-        .stat-card {
-            background: linear-gradient(135deg, #00abce, #73a535);
-            color: white;
+        .form-summary {
+            background: rgba(255,255,255,0.8);
+            border-radius: 12px;
             padding: 20px;
-            border-radius: 15px;
+            border-left: 4px solid #00abce;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+
+        .form-summary:nth-child(1) { border-left-color: #00abce; }
+        .form-summary:nth-child(2) { border-left-color: #73a535; }
+        .form-summary:nth-child(3) { border-left-color: #925333; }
+        .form-summary:nth-child(4) { border-left-color: #00abce; }
+        .form-summary:nth-child(5) { border-left-color: #73a535; }
+
+        .form-title {
+            color: #925333;
+            font-size: 1.2em;
+            font-weight: 600;
+            margin-bottom: 10px;
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        .form-states {
+            color: #555;
+            font-size: 1em;
+            line-height: 1.5;
+            font-family: 'Frank Ruhl Libre', serif;
+        }
+
+        .no-forms-message {
             text-align: center;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-        }
-
-        .stat-card:nth-child(2) {
-            background: linear-gradient(135deg, #925333, #73a535);
-        }
-
-        .stat-card:nth-child(3) {
-            background: linear-gradient(135deg, #00abce, #925333);
-        }
-
-        .stat-card:nth-child(4) {
-            background: linear-gradient(135deg, #73a535, #00abce);
-        }
-
-        .stat-number {
-            font-size: 2em;
-            font-weight: bold;
-            display: block;
+            color: #666;
+            font-style: italic;
+            padding: 30px;
+            background: rgba(255,255,255,0.8);
+            border-radius: 12px;
         }
 
         .forms-definitions {
@@ -375,8 +438,13 @@
                 padding: 20px;
             }
 
-            .stats-summary {
-                grid-template-columns: repeat(2, 1fr);
+            .reports-content {
+                flex-direction: column;
+                gap: 25px;
+            }
+
+            .tepper-fellows-info {
+                min-width: auto;
             }
 
             .forms-definitions {
@@ -483,6 +551,14 @@
                     <span class="legend-emoji">❌</span>
                     <span>Failed Legislation</span>
                 </div>
+                <div class="legend-item">
+                    <span class="legend-emoji">⏳</span>
+                    <span>Under Consideration</span>
+                </div>
+                <div class="legend-item">
+                    <span class="legend-emoji">⛔</span>
+                    <span>Repealed</span>
+                </div>
             </div>
         </div>
 
@@ -498,31 +574,46 @@
         </div>
 
         <div class="content-section">
-            <h2>Annual Reports: The State of Social Enterprise and the Law</h2>
-            <p>Every year the Grunin Center for Law and Social Entrepreneurship tracks US legislative developments in the social enterprise field. Click on the links below to access our comprehensive annual reports documenting the evolution of social enterprise legislation across the US from 2009 to the present.</p>
-            
-            <div class="reports-grid">
-                <a href="https://socentlawtracker.org/wp-content/uploads/2024/09/2023_2024_Grunin_Tepper_Social-Enterprise-and-Law-Report.pdf" target="_blank" class="report-link">
-                    📊 2023-2024 Report
-                </a>
+            <div class="reports-content">
+                <div class="reports-main">
+                    <h2>Annual Reports: The State of Social Enterprise and the Law</h2>
+                    <p>The Grunin Center publishes comprehensive annual reports tracking US social enterprise legislative developments from 2009 to the present. Access our reports below.</p>
+                    
+                    <div class="reports-grid">
+                        <a href="https://socentlawtracker.org/wp-content/uploads/2025/08/Grunin-2024-25-Social-Enterprise-and-Law-Report_V2-1.pdf" target="_blank" class="report-link">
+                            📊 2024-2025 Report
+                        </a>
+                        <a href="https://socentlawtracker.org/wp-content/uploads/2024/09/2023_2024_Grunin_Tepper_Social-Enterprise-and-Law-Report.pdf" target="_blank" class="report-link">
+                            📊 2023-2024 Report
+                        </a>
                 <a href="https://socentlawtracker.org/wp-content/uploads/2023/09/2022_2023_Grunin_Tepper_Report.pdf" target="_blank" class="report-link">
                     📊 2022-2023 Report
                 </a>
-                <a href="https://socentlawtracker.org/wp-content/uploads/2022/08/2021-2022_Grunin_Tepper_Report.pdf" target="_blank" class="report-link">
-                    📊 2021-2022 Report
-                </a>
-                <a href="https://www.law.nyu.edu/sites/default/files/Tepper%20Report%20-%20State%20of%20Social%20Enterprise%20and%20the%20Law%20-%202020-2021.pdf" target="_blank" class="report-link">
-                    📊 2020-2021 Report
-                </a>
-                <a href="https://www.law.nyu.edu/sites/default/files/ICBRSSEL21.1%20Grunin%20Tepper%20Report_Web_508v2.pdf" target="_blank" class="report-link">
-                    📊 2019-2020 Report
-                </a>
-                <a href="https://socentlawtracker.org/wp-content/uploads/2019/05/Grunin-Tepper-Report_5_30_B.pdf" target="_blank" class="report-link">
-                    📊 2018-2019 Report
-                </a>
-                <a href="http://www.law.nyu.edu/sites/default/files/upload_documents/Tepper%20Report%20-%20State%20of%20Social%20Enterprise%20and%20the%20Law%20-%202017-2018.pdf" target="_blank" class="report-link">
-                    📊 2017-2018 Report
-                </a>
+                        <a href="https://socentlawtracker.org/wp-content/uploads/2022/08/2021-2022_Grunin_Tepper_Report.pdf" target="_blank" class="report-link">
+                            📊 2021-2022 Report
+                        </a>
+                        <a href="https://www.law.nyu.edu/sites/default/files/Tepper%20Report%20-%20State%20of%20Social%20Enterprise%20and%20the%20Law%20-%202020-2021.pdf" target="_blank" class="report-link">
+                            📊 2020-2021 Report
+                        </a>
+                        <a href="https://www.law.nyu.edu/sites/default/files/ICBRSSEL21.1%20Grunin%20Tepper%20Report_Web_508v2.pdf" target="_blank" class="report-link">
+                            📊 2019-2020 Report
+                        </a>
+                        <a href="https://socentlawtracker.org/wp-content/uploads/2019/05/Grunin-Tepper-Report_5_30_B.pdf" target="_blank" class="report-link">
+                            📊 2018-2019 Report
+                        </a>
+                        <a href="http://www.law.nyu.edu/sites/default/files/upload_documents/Tepper%20Report%20-%20State%20of%20Social%20Enterprise%20and%20the%20Law%20-%202017-2018.pdf" target="_blank" class="report-link">
+                            📊 2017-2018 Report
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="tepper-fellows-info">
+                    <h3>About the Tepper Fellows</h3>
+                    <p>Each year, the Grunin Center selects up to five student Research Assistants as Tepper Fellows. These Fellows maintain the Social Enterprise Law Tracker and author the annual reports.</p>
+                    <a href="https://www.law.nyu.edu/centers/grunin-social-entrepreneurship/courses-programs/tepper-fellows" target="_blank" class="tepper-link">
+                        Learn more about our current Tepper Fellows →
+                    </a>
+                </div>
             </div>
             
             <div class="acknowledgment">
@@ -532,241 +623,266 @@
         </div>
     </div>
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.js" onload="console.log('Leaflet loaded successfully')" onerror="console.error('Failed to load Leaflet from cdnjs')"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.js"></script>
     <script>
-        // Fallback Leaflet loading
-        function loadLeafletFallback() {
-            if (typeof L === 'undefined') {
-                console.log('Loading Leaflet fallback...');
-                const script = document.createElement('script');
-                script.src = 'https://unpkg.com/leaflet@1.9.4/dist/leaflet.js';
-                script.onload = () => {
-                    console.log('Leaflet fallback loaded successfully');
-                    initializeApp();
-                };
-                script.onerror = () => {
-                    console.error('Leaflet fallback also failed to load');
-                    document.getElementById('map').innerHTML = '<div style="padding: 20px; text-align: center; color: #666;">Map failed to load. Please check your internet connection and refresh the page.</div>';
-                };
-                document.head.appendChild(script);
-            } else {
-                console.log('Leaflet already available');
-                initializeApp();
-            }
-        }
-
-        // Data from your CSV files - integrated legislative data
+        // =============================================================================
+        // CORRECTED LEGISLATIVE DATA - Only verified states included
+        // =============================================================================
+        
         const legislativeData = {
-            "2009": {
-                "IL": { "forms": ["L3C"], "failed": [], "rescinded": [] },
-                "LA": { "forms": ["L3C"], "failed": [], "rescinded": [] },
-                "MI": { "forms": ["L3C"], "failed": [], "rescinded": [] },
-                "UT": { "forms": ["L3C"], "failed": [], "rescinded": [] },
-                "VT": { "forms": ["L3C"], "failed": [], "rescinded": [] },
-                "WY": { "forms": ["L3C"], "failed": [], "rescinded": [] }
-            },
-            "2010": {
-                "IL": { "forms": ["L3C"], "failed": [], "rescinded": [] },
-                "LA": { "forms": ["L3C"], "failed": [], "rescinded": [] },
-                "MI": { "forms": ["L3C"], "failed": [], "rescinded": [] },
-                "UT": { "forms": ["L3C"], "failed": [], "rescinded": [] },
-                "VT": { "forms": ["BCORP", "L3C"], "failed": [], "rescinded": [] },
-                "WY": { "forms": ["L3C"], "failed": [], "rescinded": [] },
-                "NC": { "forms": ["L3C"], "failed": [], "rescinded": [] },
-                "RI": { "forms": ["L3C"], "failed": [], "rescinded": [] },
-                "MD": { "forms": ["BCORP"], "failed": [], "rescinded": [] }
-            },
-            "2011": {
-                "CA": { "forms": ["SPC"], "failed": [], "rescinded": [] },
-                "IL": { "forms": ["L3C"], "failed": [], "rescinded": [] },
-                "LA": { "forms": ["L3C"], "failed": [], "rescinded": [] },
-                "MI": { "forms": ["L3C"], "failed": [], "rescinded": [] },
-                "UT": { "forms": ["L3C"], "failed": [], "rescinded": [] },
-                "VT": { "forms": ["BCORP", "L3C"], "failed": [], "rescinded": [] },
-                "WY": { "forms": ["L3C"], "failed": [], "rescinded": [] },
-                "NC": { "forms": ["L3C"], "failed": [], "rescinded": [] },
-                "RI": { "forms": ["L3C"], "failed": [], "rescinded": [] },
-                "KS": { "forms": ["L3C"], "failed": [], "rescinded": [] },
-                "MD": { "forms": ["BCORP"], "failed": [], "rescinded": [] },
-                "HI": { "forms": ["BCORP"], "failed": [], "rescinded": [] },
-                "NJ": { "forms": ["BCORP"], "failed": [], "rescinded": [] },
-                "NY": { "forms": ["BCORP"], "failed": [], "rescinded": [] },
-                "VA": { "forms": ["BCORP"], "failed": [], "rescinded": [] }
-            },
-            "2012": {
-                "CA": { "forms": ["SPC"], "failed": [], "rescinded": [] },
-                "WA": { "forms": ["SPC"], "failed": [], "rescinded": [] },
-                "IL": { "forms": ["L3C", "BCORP"], "failed": [], "rescinded": [] },
-                "LA": { "forms": ["L3C", "BCORP"], "failed": [], "rescinded": [] },
-                "MI": { "forms": ["L3C"], "failed": [], "rescinded": [] },
-                "UT": { "forms": ["L3C"], "failed": [], "rescinded": [] },
-                "VT": { "forms": ["BCORP", "L3C"], "failed": [], "rescinded": [] },
-                "WY": { "forms": ["L3C"], "failed": [], "rescinded": [] },
-                "NC": { "forms": ["L3C"], "failed": [], "rescinded": [] },
-                "RI": { "forms": ["L3C"], "failed": [], "rescinded": [] },
-                "KS": { "forms": ["L3C"], "failed": [], "rescinded": [] },
-                "MD": { "forms": ["BCORP"], "failed": [], "rescinded": [] },
-                "HI": { "forms": ["BCORP"], "failed": [], "rescinded": [] },
-                "NJ": { "forms": ["BCORP"], "failed": [], "rescinded": [] },
-                "NY": { "forms": ["BCORP"], "failed": [], "rescinded": [] },
-                "VA": { "forms": ["BCORP"], "failed": [], "rescinded": [] },
-                "MA": { "forms": ["BCORP"], "failed": [], "rescinded": [] },
-                "PA": { "forms": ["BCORP"], "failed": [], "rescinded": [] },
-                "SC": { "forms": ["BCORP"], "failed": [], "rescinded": [] }
-            },
-            "2013": {
-                "CA": { "forms": ["SPC", "BCORP"], "failed": [], "rescinded": [] },
-                "WA": { "forms": ["SPC"], "failed": [], "rescinded": [] },
-                "IL": { "forms": ["L3C", "BCORP"], "failed": [], "rescinded": [] },
-                "LA": { "forms": ["L3C", "BCORP"], "failed": [], "rescinded": [] },
-                "MI": { "forms": ["L3C"], "failed": [], "rescinded": [] },
-                "UT": { "forms": ["L3C"], "failed": [], "rescinded": [] },
-                "VT": { "forms": ["BCORP", "L3C"], "failed": [], "rescinded": [] },
-                "WY": { "forms": ["L3C"], "failed": [], "rescinded": [] },
-                "NC": { "forms": ["L3C"], "failed": [], "rescinded": [] },
-                "RI": { "forms": ["L3C", "BCORP"], "failed": [], "rescinded": [] },
-                "KS": { "forms": ["L3C"], "failed": [], "rescinded": [] },
-                "AR": { "forms": ["BCORP"], "failed": [], "rescinded": [] },
-                "AZ": { "forms": ["BCORP"], "failed": [], "rescinded": [] },
-                "CO": { "forms": ["BCORP"], "failed": [], "rescinded": [] },
-                "CT": { "forms": ["BCORP"], "failed": [], "rescinded": [] },
-                "DC": { "forms": ["BCORP"], "failed": [], "rescinded": [] },
-                "DE": { "forms": ["BCORP"], "failed": [], "rescinded": [] },
-                "HI": { "forms": ["BCORP"], "failed": [], "rescinded": [] },
-                "MD": { "forms": ["BCORP"], "failed": [], "rescinded": [] },
-                "MA": { "forms": ["BCORP"], "failed": [], "rescinded": [] },
-                "NJ": { "forms": ["BCORP"], "failed": [], "rescinded": [] },
-                "NV": { "forms": ["BCORP"], "failed": [], "rescinded": [] },
-                "NY": { "forms": ["BCORP"], "failed": [], "rescinded": [] },
-                "OR": { "forms": ["BCORP"], "failed": [], "rescinded": [] },
-                "PA": { "forms": ["BCORP"], "failed": [], "rescinded": [] },
-                "SC": { "forms": ["BCORP"], "failed": [], "rescinded": [] },
-                "VA": { "forms": ["BCORP"], "failed": [], "rescinded": [] }
-            },
-            "2024": {
-                "AL": { "forms": ["BCORP"], "failed": [], "rescinded": [] },
-                "AR": { "forms": ["BCORP"], "failed": ["L3C"], "rescinded": [] },
-                "AZ": { "forms": ["BCORP"], "failed": [], "rescinded": [] },
-                "CA": { "forms": ["SPC", "BCORP"], "failed": [], "rescinded": [] },
-                "CO": { "forms": ["BCORP"], "failed": [], "rescinded": [] },
-                "CT": { "forms": ["BCORP"], "failed": [], "rescinded": [] },
-                "DC": { "forms": ["BCORP"], "failed": [], "rescinded": [] },
-                "DE": { "forms": ["BCORP", "BLLC", "SPBLP"], "failed": [], "rescinded": [] },
-                "FL": { "forms": ["SPC", "BCORP"], "failed": [], "rescinded": [] },
-                "GA": { "forms": ["BCORP"], "failed": [], "rescinded": [] },
-                "HI": { "forms": ["BCORP"], "failed": [], "rescinded": [] },
-                "ID": { "forms": ["BCORP"], "failed": [], "rescinded": [] },
-                "IL": { "forms": ["BCORP", "L3C"], "failed": [], "rescinded": [] },
-                "IN": { "forms": ["BCORP"], "failed": [], "rescinded": [] },
-                "IA": { "forms": ["BCORP"], "failed": [], "rescinded": [] },
-                "KS": { "forms": ["BCORP", "L3C"], "failed": [], "rescinded": [] },
-                "KY": { "forms": ["BCORP"], "failed": [], "rescinded": [] },
-                "LA": { "forms": ["BCORP", "L3C"], "failed": [], "rescinded": [] },
-                "MA": { "forms": ["BCORP"], "failed": [], "rescinded": [] },
-                "MD": { "forms": ["BCORP"], "failed": [], "rescinded": [] },
-                "ME": { "forms": ["BCORP"], "failed": [], "rescinded": [] },
-                "MI": { "forms": ["BCORP", "L3C"], "failed": [], "rescinded": [] },
-                "MN": { "forms": ["BCORP"], "failed": [], "rescinded": [] },
-                "MO": { "forms": ["BCORP"], "failed": [], "rescinded": [] },
-                "MS": { "forms": [], "failed": ["BCORP"], "rescinded": [] },
-                "MT": { "forms": ["BCORP"], "failed": [], "rescinded": [] },
-                "NC": { "forms": ["BCORP", "L3C"], "failed": [], "rescinded": [] },
-                "ND": { "forms": ["BCORP"], "failed": [], "rescinded": [] },
-                "NE": { "forms": ["BCORP"], "failed": [], "rescinded": [] },
-                "NH": { "forms": ["BCORP"], "failed": [], "rescinded": [] },
-                "NJ": { "forms": ["BCORP"], "failed": [], "rescinded": [] },
-                "NM": { "forms": ["BCORP"], "failed": [], "rescinded": [] },
-                "NV": { "forms": ["BCORP"], "failed": [], "rescinded": [] },
-                "NY": { "forms": ["BCORP"], "failed": [], "rescinded": [] },
-                "OH": { "forms": ["BCORP"], "failed": [], "rescinded": [] },
-                "OK": { "forms": ["BCORP"], "failed": [], "rescinded": [] },
-                "OR": { "forms": ["BCORP"], "failed": [], "rescinded": [] },
-                "PA": { "forms": ["BCORP"], "failed": [], "rescinded": [] },
-                "RI": { "forms": ["BCORP", "L3C"], "failed": [], "rescinded": [] },
-                "SC": { "forms": ["BCORP"], "failed": [], "rescinded": [] },
-                "SD": { "forms": ["BCORP"], "failed": [], "rescinded": [] },
-                "TN": { "forms": ["BCORP"], "failed": [], "rescinded": [] },
-                "TX": { "forms": ["SPC", "BCORP"], "failed": [], "rescinded": [] },
-                "UT": { "forms": ["BCORP", "L3C"], "failed": [], "rescinded": [] },
-                "VA": { "forms": ["BCORP"], "failed": [], "rescinded": [] },
-                "VT": { "forms": ["BCORP", "L3C"], "failed": [], "rescinded": [] },
-                "WA": { "forms": ["SPC", "BCORP"], "failed": [], "rescinded": [] },
-                "WI": { "forms": ["BCORP"], "failed": [], "rescinded": [] },
-                "WV": { "forms": ["BCORP"], "failed": [], "rescinded": [] },
-                "WY": { "forms": ["L3C"], "failed": [], "rescinded": [] }
-            }
+          "2008": {
+            // No verified data yet for 2008
+          },
+          
+          "2008": {
+            "VT": { "forms": ["L3C"], "failed": [], "rescinded": [] }
+          },
+          
+          "2009": {
+            "UT": { "forms": ["L3C"], "failed": [], "rescinded": [] },
+            "VT": { "forms": ["BCORP"], "failed": [], "rescinded": [] }
+          },
+          
+          "2010": {
+            // No legislative activity in 2010
+          },
+          
+          "2010": {
+            "IL": { "forms": ["L3C"], "failed": [], "rescinded": [] },
+            "MD": { "forms": ["BCORP"], "failed": [], "rescinded": [] }
+          },
+          
+          "2011": {
+            "CA": { "forms": ["SPC"], "failed": [], "rescinded": [] },
+            "OR": { "forms": [], "failed": ["L3C"], "rescinded": [] },
+            "OK": { "forms": [], "failed": ["L3C"], "rescinded": [] },
+            "IA": { "forms": [], "failed": ["L3C"], "rescinded": [] },
+            "AR": { "forms": [], "failed": ["L3C"], "rescinded": [] },
+            "IN": { "forms": [], "failed": ["L3C"], "rescinded": [] },
+            "KY": { "forms": [], "failed": ["L3C"], "rescinded": [] },
+            "AL": { "forms": [], "failed": ["L3C"], "rescinded": [] },
+            "GA": { "forms": [], "failed": ["L3C"], "rescinded": [] },
+            "MD": { "forms": [], "failed": ["L3C"], "rescinded": [] }
+          },
+          
+          "2012": {
+            "CA": { "forms": ["BCORP"], "failed": [], "rescinded": [] },
+            "LA": { "forms": ["BCORP"], "failed": [], "rescinded": [] },
+            "MN": { "forms": [], "failed": ["L3C"], "rescinded": [] },
+            "SC": { "forms": ["BCORP"], "failed": [], "rescinded": [] },
+            "VA": { "forms": [], "failed": ["BLLC", "L3C"], "rescinded": [] },
+            "PA": { "forms": ["BCORP"], "failed": [], "rescinded": [] },
+            "CT": { "forms": [], "failed": ["L3C"], "rescinded": [] },
+            "NH": { "forms": [], "failed": ["L3C"], "rescinded": [] }
+          },
+          
+          "2013": {
+            "DE": { "forms": ["BCORP"], "failed": [], "rescinded": [] },
+            "WA": { "forms": ["SPC"], "failed": [], "rescinded": [] },
+            "WY": { "forms": ["L3C"], "failed": [], "rescinded": [] },
+            "ND": { "forms": [], "failed": ["L3C"], "rescinded": [] },
+            "TX": { "forms": ["SPC"], "failed": ["L3C"], "rescinded": [] },
+            "AR": { "forms": ["BCORP"], "failed": [], "rescinded": [] },
+            "LA": { "forms": ["L3C"], "failed": [], "rescinded": [] },
+            "MI": { "forms": ["L3C"], "failed": [], "rescinded": [] },
+            "IL": { "forms": ["BCORP"], "failed": [], "rescinded": [] },
+            "TN": { "forms": [], "failed": ["L3C"], "rescinded": [] },
+            "SC": { "forms": ["BCORP"], "failed": [], "rescinded": [] },
+            "VA": { "forms": ["BCORP"], "failed": [], "rescinded": [] },
+            "MD": { "forms": ["BCORP", "BLLC"], "failed": [], "rescinded": [] },
+            "NJ": { "forms": ["BCORP"], "failed": [], "rescinded": [] },
+            "PA": { "forms": ["BCORP"], "failed": [], "rescinded": [] },
+            "NY": { "forms": ["BCORP"], "failed": [], "rescinded": [] },
+            "CT": { "forms": ["BCORP"], "failed": ["L3C"], "rescinded": [] },
+            "RI": { "forms": ["BCORP", "L3C"], "failed": [], "rescinded": [] },
+            "MA": { "forms": ["BCORP"], "failed": [], "rescinded": [] },
+            "VT": { "forms": ["L3C"], "failed": [], "rescinded": [] },
+            "ME": { "forms": ["L3C"], "failed": [], "rescinded": [] }
+          },
+          
+          "2014": {
+            "UT": { "forms": ["BCORP"], "failed": [], "rescinded": [] },
+            "OR": { "forms": ["BCORP", "BLLC"], "failed": [], "rescinded": [] },
+            "NV": { "forms": ["BCORP"], "failed": [], "rescinded": [] },
+            "AZ": { "forms": ["BCORP"], "failed": [], "rescinded": [] },
+            "NE": { "forms": ["BCORP"], "failed": [], "rescinded": [] },
+            "KS": { "forms": [], "failed": ["L3C"], "rescinded": [] },
+            "FL": { "forms": ["SPC", "BCORP"], "failed": [], "rescinded": [] },
+            "NC": { "forms": [], "failed": [], "rescinded": ["L3C"] },
+            "WV": { "forms": ["BCORP"], "failed": [], "rescinded": [] },
+            "CT": { "forms": ["BCORP"], "failed": [], "rescinded": [] },
+            "NH": { "forms": ["BCORP"], "failed": [], "rescinded": [] }
+          },
+          
+          "2015": {
+            "ID": { "forms": ["BCORP"], "failed": [], "rescinded": [] },
+            "MT": { "forms": ["BCORP"], "failed": [], "rescinded": [] },
+            "ND": { "forms": [], "failed": ["BCORP"], "rescinded": [] },
+            "MN": { "forms": ["BCORP"], "failed": [], "rescinded": [] },
+            "IN": { "forms": ["BCORP"], "failed": [], "rescinded": [] },
+            "TN": { "forms": ["BCORP"], "failed": [], "rescinded": [] },
+            "WI": { "forms": [], "failed": ["L3C"], "rescinded": [] }
+          },
+          
+          "2016": {
+            // No legislative activity in 2016
+          },
+          
+          "2016": {
+            "PA": { "forms": ["BLLC"], "failed": [], "rescinded": [] }
+          },
+          
+          "2017": {
+            "NV": { "forms": [], "failed": ["L3C"], "rescinded": [] },
+            "KS": { "forms": ["BCORP"], "failed": [], "rescinded": [] },
+            "TX": { "forms": ["BCORP"], "failed": [], "rescinded": [] },
+            "WI": { "forms": ["BCORP"], "failed": [], "rescinded": [] },
+            "KY": { "forms": ["BCORP"], "failed": [], "rescinded": [] },
+            "MS": { "forms": [], "failed": ["BCORP"], "rescinded": [] },
+            "NC": { "forms": [], "failed": ["BCORP"], "rescinded": [] },
+            "OH": { "forms": [], "failed": ["BCORP"], "rescinded": [] }
+          },
+          
+          "2018": {
+            "UT": { "forms": ["BLLC"], "failed": [], "rescinded": [] },
+            "DE": { "forms": ["BLLC", "SPBLP"], "failed": [], "rescinded": [] },
+            "MS": { "forms": [], "failed": ["BCORP"], "rescinded": [] },
+            "NY": { "forms": [], "failed": ["L3C"], "rescinded": [] }
+          },
+          
+          "2019": {
+            "ND": { "forms": [], "failed": ["BCORP"], "rescinded": [] },
+            "OK": { "forms": ["BCORP"], "failed": [], "rescinded": [] },
+            "MS": { "forms": [], "failed": ["BCORP"], "rescinded": [] },
+            "ME": { "forms": ["BCORP"], "failed": [], "rescinded": [] }
+          },
+          
+          "2020": {
+            "NM": { "forms": ["BCORP"], "failed": [], "rescinded": [] },
+            "OK": { "forms": [], "failed": ["BLLC"], "rescinded": [] },
+            "AL": { "forms": ["BCORP"], "failed": [], "rescinded": [] },
+            "MS": { "forms": [], "failed": ["BCORP"], "rescinded": [] },
+            "GA": { "forms": ["BCORP"], "failed": [], "rescinded": [] },
+            "OH": { "forms": ["BCORP"], "failed": [], "rescinded": [] }
+          },
+          
+          "2021": {
+            "WY": { "forms": [], "failed": ["BCORP"], "rescinded": [] },
+            "IA": { "forms": ["BCORP"], "failed": [], "rescinded": [] },
+            "MS": { "forms": [], "failed": ["BCORP"], "rescinded": [] }
+          },
+          
+          "2022": {
+            "MS": { "forms": [], "failed": ["BCORP"], "rescinded": [] }
+          },
+          
+          "2023": {
+            "WY": { "forms": [], "failed": ["BCORP"], "rescinded": [] },
+            "MI": { "forms": [], "failed": [], "rescinded": [], "underConsideration": ["BCORP"] },
+            "MS": { "forms": [], "failed": ["BCORP"], "rescinded": [] }
+          },
+          
+          "2024": {
+            "MI": { "forms": [], "failed": [], "rescinded": [], "underConsideration": ["BCORP"] },
+            "MS": { "forms": [], "failed": ["BCORP"], "rescinded": [] }
+          }
         };
 
-        // Fill in missing years with progression
-        const years = [2009, 2010, 2011, 2012, 2013, 2014, 2015, 2016, 2017, 2018, 2019, 2020, 2021, 2022, 2023, 2024];
-        
         // Corporate form definitions
         const corporateForms = {
-            "SPC": "Social Purpose Corporation",
-            "L3C": "Low-profit Limited Liability Company", 
-            "BLLC": "Benefit Limited Liability Company",
-            "SPBLP": "Social Purpose Benefit Limited Partnership",
-            "BCORP": "Benefit Corporation"
+          "SPC": "Social Purpose Corporation",
+          "L3C": "Low-profit Limited Liability Company", 
+          "BLLC": "Benefit Limited Liability Company",
+          "SPBLP": "Social Purpose Benefit Limited Partnership",
+          "BCORP": "Benefit Corporation"
         };
 
         // State name mappings
         const stateNames = {
-            "AL": "Alabama", "AK": "Alaska", "AZ": "Arizona", "AR": "Arkansas", "CA": "California",
-            "CO": "Colorado", "CT": "Connecticut", "DE": "Delaware", "FL": "Florida", "GA": "Georgia",
-            "HI": "Hawaii", "ID": "Idaho", "IL": "Illinois", "IN": "Indiana", "IA": "Iowa",
-            "KS": "Kansas", "KY": "Kentucky", "LA": "Louisiana", "ME": "Maine", "MD": "Maryland",
-            "MA": "Massachusetts", "MI": "Michigan", "MN": "Minnesota", "MS": "Mississippi", "MO": "Missouri",
-            "MT": "Montana", "NE": "Nebraska", "NV": "Nevada", "NH": "New Hampshire", "NJ": "New Jersey",
-            "NM": "New Mexico", "NY": "New York", "NC": "North Carolina", "ND": "North Dakota", "OH": "Ohio",
-            "OK": "Oklahoma", "OR": "Oregon", "PA": "Pennsylvania", "RI": "Rhode Island", "SC": "South Carolina",
-            "SD": "South Dakota", "TN": "Tennessee", "TX": "Texas", "UT": "Utah", "VT": "Vermont",
-            "VA": "Virginia", "WA": "Washington", "WV": "West Virginia", "WI": "Wisconsin", "WY": "Wyoming",
-            "DC": "District of Columbia"
+          "AL": "Alabama", "AK": "Alaska", "AZ": "Arizona", "AR": "Arkansas", "CA": "California",
+          "CO": "Colorado", "CT": "Connecticut", "DE": "Delaware", "FL": "Florida", "GA": "Georgia",
+          "HI": "Hawaii", "ID": "Idaho", "IL": "Illinois", "IN": "Indiana", "IA": "Iowa",
+          "KS": "Kansas", "KY": "Kentucky", "LA": "Louisiana", "ME": "Maine", "MD": "Maryland",
+          "MA": "Massachusetts", "MI": "Michigan", "MN": "Minnesota", "MS": "Mississippi", "MO": "Missouri",
+          "MT": "Montana", "NE": "Nebraska", "NV": "Nevada", "NH": "New Hampshire", "NJ": "New Jersey",
+          "NM": "New Mexico", "NY": "New York", "NC": "North Carolina", "ND": "North Dakota", "OH": "Ohio",
+          "OK": "Oklahoma", "OR": "Oregon", "PA": "Pennsylvania", "RI": "Rhode Island", "SC": "South Carolina",
+          "SD": "South Dakota", "TN": "Tennessee", "TX": "Texas", "UT": "Utah", "VT": "Vermont",
+          "VA": "Virginia", "WA": "Washington", "WV": "West Virginia", "WI": "Wisconsin", "WY": "Wyoming",
+          "DC": "District of Columbia"
         };
+
+        // Function to calculate what forms are available as of a given year
+        function calculateAvailableForms(stateCode, targetYear) {
+          const availableForms = new Set();
+          
+          for (let year = 2008; year <= parseInt(targetYear); year++) {
+            const yearData = legislativeData[year.toString()];
+            if (yearData && yearData[stateCode]) {
+              const stateData = yearData[stateCode];
+              
+              stateData.forms.forEach(form => availableForms.add(form));
+              stateData.rescinded.forEach(form => availableForms.delete(form));
+            }
+          }
+          
+          return Array.from(availableForms);
+        }
 
         // Function to get activity status for a state in a given year
         function getStateActivity(stateCode, year) {
-            const yearData = legislativeData[year.toString()];
-            if (!yearData || !yearData[stateCode]) {
-                return { status: "none", emoji: "⚪", forms: [], failed: [], rescinded: [] };
-            }
-            
-            const stateData = yearData[stateCode];
-            const formsCount = stateData.forms.length;
-            const failedCount = stateData.failed.length;
-            const rescindedCount = stateData.rescinded.length;
-            
-            // Determine status and emoji
-            let status, emoji;
-            
-            if (rescindedCount > 0) {
-                status = "rescinded";
-                emoji = rescindedCount === 1 ? "⛔" : "⛔⛔";
-            } else if (failedCount > 0 && formsCount === 0) {
-                status = "failed";
-                emoji = "❌";
-            } else if (formsCount > 0) {
-                status = "enacted";
-                if (formsCount === 1) emoji = "✅";
-                else if (formsCount === 2) emoji = "✅✅";
-                else emoji = "✅✅✅";
-            } else {
-                status = "none";
-                emoji = "⚪";
-            }
-            
-            return {
-                status: status,
-                emoji: emoji,
-                forms: stateData.forms,
-                failed: stateData.failed,
-                rescinded: stateData.rescinded
+          const yearData = legislativeData[year.toString()];
+          if (!yearData || !yearData[stateCode]) {
+            return { 
+              status: "none", 
+              emoji: "⚪", 
+              forms: [], 
+              failed: [], 
+              rescinded: [],
+              underConsideration: [],
+              availableForms: calculateAvailableForms(stateCode, year)
             };
+          }
+          
+          const stateData = yearData[stateCode];
+          const formsCount = stateData.forms.length;
+          const failedCount = stateData.failed.length;
+          const rescindedCount = stateData.rescinded.length;
+          const underConsiderationCount = stateData.underConsideration ? stateData.underConsideration.length : 0;
+          
+          let status, emoji;
+          
+          if (rescindedCount > 0) {
+            status = "rescinded";
+            emoji = "⛔";
+          } else if (failedCount > 0 && formsCount === 0 && underConsiderationCount === 0) {
+            status = "failed";
+            emoji = "❌";
+          } else if (formsCount > 0) {
+            status = "enacted";
+            emoji = "✅";
+          } else if (underConsiderationCount > 0) {
+            status = "underConsideration";
+            emoji = "⏳";
+          } else {
+            status = "none";
+            emoji = "⚪";
+          }
+          
+          return {
+            status: status,
+            emoji: emoji,
+            forms: stateData.forms,
+            failed: stateData.failed,
+            rescinded: stateData.rescinded,
+            underConsideration: stateData.underConsideration || [],
+            availableForms: calculateAvailableForms(stateCode, year)
+          };
         }
 
         // Function to get all available years
         function getAvailableYears() {
-            return years;
+          return Object.keys(legislativeData).map(year => parseInt(year)).sort();
         }
 
         // Main SELT Map class
@@ -788,7 +904,7 @@
 
             initializeMap() {
                 this.map = L.map('map', {
-                    center: [35.5, -95.7129],
+                    center: [38.0, -97.0],
                     zoom: 4.5,
                     minZoom: 4.5,
                     maxZoom: 4.5,
@@ -829,21 +945,21 @@
 
             createStateMarkers() {
                 const stateCoords = {
-                    'CA': [36.7783, -119.4179], 'TX': [31.0545, -97.5635], 'FL': [27.7663, -81.6868],
+                    'CA': [36.7783, -119.4179], 'TX': [31.9686, -99.9018], 'FL': [27.7663, -82.6404],
                     'NY': [42.1657, -74.9481], 'PA': [40.5908, -77.2098], 'IL': [40.3495, -88.9861],
                     'OH': [40.3888, -82.7649], 'GA': [33.0406, -83.6431], 'NC': [35.5557, -79.3877],
                     'MI': [43.3266, -84.5361], 'NJ': [40.2989, -74.5210], 'VA': [37.7693, -78.2057],
                     'WA': [47.0379, -120.8510], 'AZ': [33.7298, -111.4312], 'MA': [42.2373, -71.5314],
                     'TN': [35.7478, -86.7123], 'IN': [39.8647, -86.2604], 'MO': [38.4561, -92.2884],
                     'MD': [39.0639, -76.8021], 'WI': [44.2619, -89.6165], 'CO': [39.0598, -105.3111],
-                    'MN': [45.6945, -93.9002], 'SC': [33.8191, -80.9066], 'AL': [32.8067, -86.7911],
+                    'MN': [45.6945, -93.9002], 'SC': [33.8191, -80.9066], 'AL': [32.3668, -86.7999],
                     'LA': [31.1695, -91.8678], 'KY': [37.6681, -84.6701], 'OR': [44.5672, -122.1269],
                     'OK': [35.5653, -96.9289], 'CT': [41.5978, -72.7554], 'UT': [40.1135, -111.8535],
                     'NV': [38.3135, -117.0554], 'AR': [34.9513, -92.3809], 'MS': [32.7673, -89.6812],
                     'KS': [38.5111, -96.8005], 'NM': [34.8375, -106.2371], 'NE': [41.1254, -98.2681],
-                    'WV': [38.4680, -80.9696], 'ID': [44.2394, -114.5103], 'HI': [21.0943, -157.4983],
+                    'WV': [38.4680, -80.9696], 'ID': [44.2394, -114.5103], 'HI': [21.1098, -157.5311],
                     'NH': [43.4108, -71.5653], 'ME': [44.6939, -69.3819], 'RI': [41.6762, -71.5562],
-                    'MT': [46.9048, -110.3261], 'DE': [39.3185, -75.5071], 'SD': [44.2853, -100.2263],
+                    'MT': [46.9048, -110.3261], 'DE': [39.3498, -75.5148], 'SD': [44.2853, -100.2263],
                     'ND': [47.5362, -99.7930], 'AK': [61.3025, -152.7764], 'VT': [44.0407, -72.7093],
                     'WY': [42.7475, -107.2085], 'DC': [38.9072, -77.0369], 'IA': [42.0115, -93.2105]
                 };
@@ -874,9 +990,9 @@
                         <p><strong>Year:</strong> ${this.currentYear}</p>
                 `;
 
+                // Show current year's activity
                 if (activity.forms.length > 0) {
-                    content += `<p><strong>Enacted Forms:</strong></p>`;
-                    content += `<ul>`;
+                    content += `<p><strong>Enacted This Year:</strong></p><ul>`;
                     activity.forms.forEach(form => {
                         const formName = corporateForms[form] || form;
                         content += `<li><strong>${form}</strong> - ${formName}</li>`;
@@ -885,8 +1001,7 @@
                 }
 
                 if (activity.failed.length > 0) {
-                    content += `<p><strong>Failed Legislation:</strong></p>`;
-                    content += `<ul>`;
+                    content += `<p><strong>Failed This Year:</strong></p><ul>`;
                     activity.failed.forEach(form => {
                         const formName = corporateForms[form] || form;
                         content += `<li><strong>${form}</strong> - ${formName}</li>`;
@@ -894,9 +1009,18 @@
                     content += `</ul>`;
                 }
 
+                // Show under consideration this year
+                if (activity.underConsideration && activity.underConsideration.length > 0) {
+                    content += `<p><strong>Under Consideration This Year:</strong></p><ul>`;
+                    activity.underConsideration.forEach(form => {
+                        const formName = corporateForms[form] || form;
+                        content += `<li><strong>${form}</strong> - ${formName}</li>`;
+                    });
+                    content += `</ul>`;
+                }
+
                 if (activity.rescinded.length > 0) {
-                    content += `<p><strong>Rescinded Forms:</strong></p>`;
-                    content += `<ul>`;
+                    content += `<p><strong>Repealed This Year:</strong></p><ul>`;
                     activity.rescinded.forEach(form => {
                         const formName = corporateForms[form] || form;
                         content += `<li><strong>${form}</strong> - ${formName}</li>`;
@@ -904,26 +1028,37 @@
                     content += `</ul>`;
                 }
 
-                if (activity.forms.length === 0 && activity.failed.length === 0 && activity.rescinded.length === 0) {
+                // Show currently available forms
+                if (activity.availableForms.length > 0) {
+                    content += `<p><strong>Currently Available Forms:</strong></p><ul>`;
+                    activity.availableForms.forEach(form => {
+                        const formName = corporateForms[form] || form;
+                        content += `<li><strong>${form}</strong> - ${formName}</li>`;
+                    });
+                    content += `</ul>`;
+                }
+
+                if (activity.forms.length === 0 && activity.failed.length === 0 && activity.rescinded.length === 0 && (!activity.underConsideration || activity.underConsideration.length === 0)) {
                     content += `<p><em>No legislative activity this year</em></p>`;
                 }
 
-content += `
-                        <button onclick="window.open('states/` + stateCode.toLowerCase() + `.html', '_blank')" 
-                                class="history-btn">
-                          View Complete Legislative History
-                        </button>
-                      </div>
+                if (activity.availableForms.length === 0) {
+                    content += `<p><em>No social enterprise forms currently available</em></p>`;
+                }
+
+                content += `
+                    <button onclick="window.open('states/${stateCode.toLowerCase()}.html', '_blank')" 
+                            class="history-btn">
+                      View Complete Legislative History
+                    </button>
+                  </div>
                 `;
 
                 return content;
             }
 
             updateDisplay() {
-                // Close any open popups when year changes
                 this.map.closePopup();
-                
-                // Update the stats section title
                 document.getElementById('statsTitle').textContent = `${this.currentYear} Status Summary`;
                 
                 this.stateMarkers.forEach((marker, stateCode) => {
@@ -934,69 +1069,51 @@ content += `
             }
 
             updateStats() {
-                const yearData = legislativeData[this.currentYear.toString()] || {};
+                const allStates = Array.from(this.stateMarkers.keys());
                 
-                let statesWithForms = 0;
-                let totalForms = 0;
-                let statesWithFailed = 0;
-                let uniqueForms = new Set();
-
-                Object.values(yearData).forEach(stateData => {
-                    if (stateData.forms.length > 0) {
-                        statesWithForms++;
-                        totalForms += stateData.forms.length;
-                        stateData.forms.forEach(form => uniqueForms.add(form));
-                    }
-                    if (stateData.failed.length > 0) {
-                        statesWithFailed++;
-                    }
+                // Group states by available forms
+                const formsByType = {};
+                
+                allStates.forEach(stateCode => {
+                    const activity = getStateActivity(stateCode, this.currentYear);
+                    
+                    activity.availableForms.forEach(form => {
+                        if (!formsByType[form]) {
+                            formsByType[form] = [];
+                        }
+                        formsByType[form].push(stateCode);
+                    });
                 });
 
-                const statsHtml = `
-                    <div class="stat-card">
-                        <span class="stat-number">${statesWithForms}</span>
-                        <span>States with Social Enterprise Forms</span>
-                    </div>
-                    <div class="stat-card">
-                        <span class="stat-number">${uniqueForms.size}</span>
-                        <span>Unique Form Types Available</span>
-                    </div>
-                    <div class="stat-card">
-                        <span class="stat-number">${totalForms}</span>
-                        <span>Total Forms Enacted</span>
-                    </div>
-                    <div class="stat-card">
-                        <span class="stat-number">${statesWithFailed}</span>
-                        <span>States with Failed Legislation</span>
-                    </div>
-                `;
+                // Sort forms by number of states (most popular first)
+                const sortedForms = Object.entries(formsByType).sort((a, b) => b[1].length - a[1].length);
+
+                let statsHtml = '';
+                
+                if (sortedForms.length === 0) {
+                    statsHtml = `<div class="no-forms-message">No social enterprise forms available in ${this.currentYear}</div>`;
+                } else {
+                    sortedForms.forEach(([formCode, states]) => {
+                        const formName = corporateForms[formCode] || formCode;
+                        const statesList = states.sort().join(', ');
+                        const stateCount = states.length === 1 ? '1 State' : `${states.length} States`;
+                        
+                        statsHtml += `
+                            <div class="form-summary">
+                                <h3 class="form-title">${formCode} - ${formName}, ${stateCount}</h3>
+                                <div class="form-states">${statesList}</div>
+                            </div>
+                        `;
+                    });
+                }
 
                 document.getElementById('statsSummary').innerHTML = statsHtml;
             }
         }
 
         // Initialize the application
-        function initializeApp() {
-            if (typeof L !== 'undefined') {
-                new SELTMap();
-            } else {
-                console.error('Leaflet still not available');
-                document.getElementById('map').innerHTML = '<div style="padding: 20px; text-align: center; color: #666;">Map library failed to load. Please refresh the page.</div>';
-            }
-        }
-
-        // Initialize when page loads
         document.addEventListener('DOMContentLoaded', () => {
-            // Give Leaflet a moment to load, then check
-            setTimeout(() => {
-                if (typeof L !== 'undefined') {
-                    console.log('Leaflet loaded from primary source');
-                    initializeApp();
-                } else {
-                    console.log('Primary Leaflet load failed, trying fallback...');
-                    loadLeafletFallback();
-                }
-            }, 200);
+            new SELTMap();
         });
     </script>
 </body>
