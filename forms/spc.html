@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Social Purpose Corporation (SPC) - Legislative Timeline</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Frank+Ruhl+Libre:wght@400;500&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background: linear-gradient(135deg, #00abce 0%, #73a535 100%);
+            min-height: 100vh;
+            color: #333;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .back-button {
+            display: inline-block;
+            background: linear-gradient(135deg, #00abce, #73a535);
+            color: white;
+            padding: 12px 24px;
+            border-radius: 25px;
+            text-decoration: none;
+            font-weight: 500;
+            margin-bottom: 30px;
+            transition: transform 0.2s ease;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+        }
+
+        .back-button:hover {
+            transform: translateX(-5px);
+            background: linear-gradient(135deg, #925333, #73a535);
+        }
+
+        .header-section {
+            background: rgba(255,255,255,0.95);
+            border-radius: 20px;
+            padding: 30px;
+            margin-bottom: 30px;
+            backdrop-filter: blur(10px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        }
+
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: start;
+            gap: 30px;
+        }
+
+        .header-main {
+            flex: 1;
+        }
+
+        .header-main h1 {
+            color: #925333;
+            font-size: 2.5em;
+            margin-bottom: 15px;
+            font-weight: 700;
+        }
+
+        .form-abbr {
+            color: #73a535;
+            font-size: 0.7em;
+            font-weight: 500;
+        }
+
+        .header-main p {
+            color: #555;
+            font-size: 1.1em;
+            line-height: 1.6;
+            font-family: 'Frank Ruhl Libre', serif;
+        }
+
+        .quick-stats {
+            background: linear-gradient(135deg, #00abce, #73a535);
+            color: white;
+            padding: 25px;
+            border-radius: 15px;
+            min-width: 200px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+
+        .stat-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 12px;
+            padding-bottom: 12px;
+            border-bottom: 1px solid rgba(255,255,255,0.3);
+        }
+
+        .stat-row:last-child {
+            margin-bottom: 0;
+            padding-bottom: 0;
+            border-bottom: none;
+        }
+
+        .stat-label {
+            font-size: 0.9em;
+            opacity: 0.9;
+        }
+
+        .stat-value {
+            font-size: 1.3em;
+            font-weight: 700;
+        }
+
+        .timeline-section {
+            background: rgba(255,255,255,0.95);
+            border-radius: 20px;
+            padding: 30px;
+            margin-bottom: 30px;
+            backdrop-filter: blur(10px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        }
+
+        .timeline-section h2 {
+            color: #925333;
+            font-size: 1.8em;
+            margin-bottom: 25px;
+            font-weight: 600;
+        }
+
+        .timeline-year {
+            background: rgba(255,255,255,0.8);
+            border-radius: 12px;
+            padding: 20px;
+            margin-bottom: 20px;
+            border-left: 4px solid #00abce;
+            transition: transform 0.2s ease;
+        }
+
+        .timeline-year:nth-child(even) {
+            border-left-color: #73a535;
+        }
+
+        .timeline-year:hover {
+            transform: translateX(5px);
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+
+        .year-header {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 15px;
+        }
+
+        .year-number {
+            font-size: 1.5em;
+            font-weight: 700;
+            color: #925333;
+        }
+
+        .state-count {
+            background: #73a535;
+            color: white;
+            padding: 4px 12px;
+            border-radius: 15px;
+            font-size: 0.85em;
+            font-weight: 500;
+        }
+
+        .new-badge {
+            background: #ff6b6b;
+            color: white;
+            padding: 4px 10px;
+            border-radius: 10px;
+            font-size: 0.75em;
+            font-weight: 600;
+            text-transform: uppercase;
+        }
+
+        .states-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .state-pill {
+            background: linear-gradient(135deg, #00abce, #73a535);
+            color: white;
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-size: 0.9em;
+            font-weight: 500;
+            text-decoration: none;
+            display: inline-block;
+            transition: all 0.2s ease;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+            cursor: pointer;
+        }
+
+        .state-pill:hover {
+            transform: scale(1.05) translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+        }
+
+        .no-activity {
+            color: #999;
+            font-style: italic;
+            padding: 10px;
+        }
+
+        .info-section {
+            background: rgba(115,165,53,0.1);
+            border-left: 4px solid #73a535;
+            padding: 20px;
+            margin-bottom: 30px;
+            border-radius: 12px;
+        }
+
+        .info-section h3 {
+            color: #73a535;
+            margin-bottom: 10px;
+        }
+
+        .info-section p {
+            color: #666;
+            line-height: 1.6;
+        }
+
+        .summary-section {
+            background: rgba(255,255,255,0.95);
+            border-radius: 20px;
+            padding: 30px;
+            backdrop-filter: blur(10px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        }
+
+        .current-states {
+            margin-top: 20px;
+        }
+
+        .current-states h3 {
+            color: #925333;
+            margin-bottom: 15px;
+            font-size: 1.3em;
+        }
+
+        .all-states-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+            gap: 10px;
+        }
+
+        .footer-note {
+            text-align: center;
+            color: white;
+            margin-top: 30px;
+            padding: 20px;
+            font-size: 0.9em;
+            opacity: 0.9;
+        }
+
+        @media (max-width: 768px) {
+            .header-content {
+                flex-direction: column;
+            }
+
+            .quick-stats {
+                width: 100%;
+            }
+
+            .header-main h1 {
+                font-size: 2em;
+            }
+
+            .all-states-grid {
+                grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <a href="../index.html" class="back-button">← Back to SELT Map</a>
+        
+        <div class="header-section">
+            <div class="header-content">
+                <div class="header-main">
+                    <h1>Social Purpose Corporation <span class="form-abbr">(SPC)</span></h1>
+                    <p>The Social Purpose Corporation allows corporations to define specific social or environmental purposes in addition to profit maximization. This form provides flexibility in how companies balance financial and social objectives, offering an alternative to the broader public benefit requirement of benefit corporations. SPCs allow directors to consider specific social purposes in their decision-making while maintaining traditional corporate governance structures.</p>
+                </div>
+                <div class="quick-stats">
+                    <div class="stat-row">
+                        <span class="stat-label">Total States</span>
+                        <span class="stat-value">4</span>
+                    </div>
+                    <div class="stat-row">
+                        <span class="stat-label">First Enacted</span>
+                        <span class="stat-value">2011</span>
+                    </div>
+                    <div class="stat-row">
+                        <span class="stat-label">Latest</span>
+                        <span class="stat-value">2014</span>
+                    </div>
+                    <div class="stat-row">
+                        <span class="stat-label">Coverage</span>
+                        <span class="stat-value">8%</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="info-section">
+            <h3>💡 About Social Purpose Corporations</h3>
+            <p>SPCs offer a middle ground between traditional corporations and benefit corporations. While benefit corporations must pursue general public benefit, SPCs can focus on specific social or environmental purposes defined in their articles of incorporation. This targeted approach appeals to companies with focused missions that don't necessarily encompass broad public benefit.</p>
+        </div>
+
+        <div class="timeline-section">
+            <h2>Legislative Timeline</h2>
+            
+            <div class="timeline-year">
+                <div class="year-header">
+                    <span class="year-number">2011</span>
+                    <span class="state-count">1 state</span>
+                    <span class="new-badge">First!</span>
+                </div>
+                <div class="states-grid">
+                    <a href="../states/ca.html" class="state-pill">California</a>
+                </div>
+            </div>
+
+            <div class="timeline-year">
+                <div class="year-header">
+                    <span class="year-number">2012</span>
+                    <span class="state-count">0 states</span>
+                </div>
+                <div class="no-activity">No new SPC legislation enacted this year</div>
+            </div>
+
+            <div class="timeline-year">
+                <div class="year-header">
+                    <span class="year-number">2013</span>
+                    <span class="state-count">2 states</span>
+                </div>
+                <div class="states-grid">
+                    <a href="../states/wa.html" class="state-pill">Washington</a>
+                    <a href="../states/tx.html" class="state-pill">Texas</a>
+                </div>
+            </div>
+
+            <div class="timeline-year">
+                <div class="year-header">
+                    <span class="year-number">2014</span>
+                    <span class="state-count">1 state</span>
+                    <span class="new-badge">Latest</span>
+                </div>
+                <div class="states-grid">
+                    <a href="../states/fl.html" class="state-pill">Florida</a>
+                </div>
+            </div>
+
+            <div class="timeline-year">
+                <div class="year-header">
+                    <span class="year-number">2015-2024</span>
+                    <span class="state-count">0 states</span>
+                </div>
+                <div class="no-activity">No new SPC legislation has been enacted since 2014</div>
+            </div>
+        </div>
+
+        <div class="summary-section">
+            <div class="current-states">
+                <h3>States with Social Purpose Corporation Legislation (as of 2024)</h3>
+                <div class="all-states-grid">
+                    <a href="../states/ca.html" class="state-pill">California</a>
+                    <a href="../states/fl.html" class="state-pill">Florida</a>
+                    <a href="../states/tx.html" class="state-pill">Texas</a>
+                    <a href="../states/wa.html" class="state-pill">Washington</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer-note">
+            <p>Data maintained by the Grunin Center for Law and Social Entrepreneurship at NYU School of Law</p>
+        </div>
+    </div>
+</body>
+</html>
