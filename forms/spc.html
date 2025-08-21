@@ -281,11 +281,31 @@
             .all-states-grid {
                 grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
             }
+        } .back-button-float {
+            position: fixed;
+            bottom: 20px;
+            left: 20px;
+            z-index: 1000;
+            background: linear-gradient(135deg, #00abce, #73a535);
+            color: white;
+            padding: 12px 20px;
+            border-radius: 25px;
+            text-decoration: none;
+            font-weight: 500;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+            transition: all 0.3s ease;
+        }
+
+        .back-button-float:hover {
+            transform: translateY(-2px);
+            background: linear-gradient(135deg, #925333, #73a535);
+            box-shadow: 0 6px 20px rgba(0,0,0,0.4);
         }
     </style>
 </head>
 <body>
-    <div class="container">
+       <a href="../index.html" class="back-button-float">← Map</a>
+ <div class="container">
         <a href="../index.html" class="back-button">← Back to SELT Map</a>
         
         <div class="header-section">
