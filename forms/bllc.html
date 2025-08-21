@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Benefit Limited Liability Company (BLLC) - Legislative Timeline</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Frank+Ruhl+Libre:wght@400;500&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background: linear-gradient(135deg, #00abce 0%, #73a535 100%);
+            min-height: 100vh;
+            color: #333;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .back-button {
+            display: inline-block;
+            background: linear-gradient(135deg, #00abce, #73a535);
+            color: white;
+            padding: 12px 24px;
+            border-radius: 25px;
+            text-decoration: none;
+            font-weight: 500;
+            margin-bottom: 30px;
+            transition: transform 0.2s ease;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+        }
+
+        .back-button:hover {
+            transform: translateX(-5px);
+            background: linear-gradient(135deg, #925333, #73a535);
+        }
+
+        .header-section {
+            background: rgba(255,255,255,0.95);
+            border-radius: 20px;
+            padding: 30px;
+            margin-bottom: 30px;
+            backdrop-filter: blur(10px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        }
+
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: start;
+            gap: 30px;
+        }
+
+        .header-main {
+            flex: 1;
+        }
+
+        .header-main h1 {
+            color: #925333;
+            font-size: 2.5em;
+            margin-bottom: 15px;
+            font-weight: 700;
+        }
+
+        .form-abbr {
+            color: #73a535;
+            font-size: 0.7em;
+            font-weight: 500;
+        }
+
+        .header-main p {
+            color: #555;
+            font-size: 1.1em;
+            line-height: 1.6;
+            font-family: 'Frank Ruhl Libre', serif;
+        }
+
+        .quick-stats {
+            background: linear-gradient(135deg, #00abce, #73a535);
+            color: white;
+            padding: 25px;
+            border-radius: 15px;
+            min-width: 200px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+
+        .stat-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 12px;
+            padding-bottom: 12px;
+            border-bottom: 1px solid rgba(255,255,255,0.3);
+        }
+
+        .stat-row:last-child {
+            margin-bottom: 0;
+            padding-bottom: 0;
+            border-bottom: none;
+        }
+
+        .stat-label {
+            font-size: 0.9em;
+            opacity: 0.9;
+        }
+
+        .stat-value {
+            font-size: 1.3em;
+            font-weight: 700;
+        }
+
+        .timeline-section {
+            background: rgba(255,255,255,0.95);
+            border-radius: 20px;
+            padding: 30px;
+            margin-bottom: 30px;
+            backdrop-filter: blur(10px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        }
+
+        .timeline-section h2 {
+            color: #925333;
+            font-size: 1.8em;
+            margin-bottom: 25px;
+            font-weight: 600;
+        }
+
+        .timeline-year {
+            background: rgba(255,255,255,0.8);
+            border-radius: 12px;
+            padding: 20px;
+            margin-bottom: 20px;
+            border-left: 4px solid #00abce;
+            transition: transform 0.2s ease;
+        }
+
+        .timeline-year:nth-child(even) {
+            border-left-color: #73a535;
+        }
+
+        .timeline-year:hover {
+            transform: translateX(5px);
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+
+        .year-header {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 15px;
+        }
+
+        .year-number {
+            font-size: 1.5em;
+            font-weight: 700;
+            color: #925333;
+        }
+
+        .state-count {
+            background: #73a535;
+            color: white;
+            padding: 4px 12px;
+            border-radius: 15px;
+            font-size: 0.85em;
+            font-weight: 500;
+        }
+
+        .new-badge {
+            background: #ff6b6b;
+            color: white;
+            padding: 4px 10px;
+            border-radius: 10px;
+            font-size: 0.75em;
+            font-weight: 600;
+            text-transform: uppercase;
+        }
+
+        .delaware-badge {
+            background: #00abce;
+            color: white;
+            padding: 4px 10px;
+            border-radius: 10px;
+            font-size: 0.75em;
+            font-weight: 600;
+            text-transform: uppercase;
+        }
+
+        .states-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .state-pill {
+            background: white;
+            color: #73a535;
+            border: 2px solid #73a535;
+            padding: 6px 14px;
+            border-radius: 20px;
+            font-size: 0.9em;
+            font-weight: 500;
+            text-decoration: none;
+            display: inline-block;
+            transition: all 0.2s ease;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+            cursor: pointer;
+        }
+
+        .state-pill:hover {
+            background: #73a535;
+            color: white;
+            transform: translateY(-2px);
+            box-shadow: 0 3px 8px rgba(0,0,0,0.2);
+        }
+
+        .no-activity {
+            color: #999;
+            font-style: italic;
+            padding: 10px;
+        }
+
+        .summary-section {
+            background: rgba(255,255,255,0.95);
+            border-radius: 20px;
+            padding: 30px;
+            backdrop-filter: blur(10px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        }
+
+        .current-states {
+            margin-top: 20px;
+        }
+
+        .current-states h3 {
+            color: #925333;
+            margin-bottom: 15px;
+            font-size: 1.3em;
+        }
+
+        .all-states-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+            gap: 10px;
+        }
+
+        .footer-note {
+            text-align: center;
+            color: white;
+            margin-top: 30px;
+            padding: 20px;
+            font-size: 0.9em;
+            opacity: 0.9;
+        }
+
+        @media (max-width: 768px) {
+            .header-content {
+                flex-direction: column;
+            }
+
+            .quick-stats {
+                width: 100%;
+            }
+
+            .header-main h1 {
+                font-size: 2em;
+            }
+
+            .all-states-grid {
+                grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <a href="../index.html" class="back-button">← Back to SELT Map</a>
+        
+        <div class="header-section">
+            <div class="header-content">
+                <div class="header-main">
+                    <h1>Benefit Limited Liability Company <span class="form-abbr">(BLLC)</span></h1>
+                    <p>The Benefit Limited Liability Company combines the flexibility of LLC structure with benefit corporation principles. This innovative form merges the pass-through taxation and operational flexibility of an LLC with the social benefit requirements of a benefit corporation. BLLCs must pursue general public benefit while providing the governance advantages of the LLC structure, making them particularly attractive for smaller social enterprises and impact-focused startups.</p>
+                </div>
+                <div class="quick-stats">
+                    <div class="stat-row">
+                        <span class="stat-label">Total States</span>
+                        <span class="stat-value">5</span>
+                    </div>
+                    <div class="stat-row">
+                        <span class="stat-label">First Enacted</span>
+                        <span class="stat-value">2013</span>
+                    </div>
+                    <div class="stat-row">
+                        <span class="stat-label">Latest</span>
+                        <span class="stat-value">2018</span>
+                    </div>
+                    <div class="stat-row">
+                        <span class="stat-label">Coverage</span>
+                        <span class="stat-value">10%</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="timeline-section">
+            <h2>Legislative Timeline</h2>
+            
+            <div class="timeline-year">
+                <div class="year-header">
+                    <span class="year-number">2013</span>
+                    <span class="state-count">1 state</span>
+                    <span class="new-badge">First!</span>
+                </div>
+                <div class="states-grid">
+                    <a href="../states/md.html" class="state-pill">Maryland</a>
+                </div>
+            </div>
+
+            <div class="timeline-year">
+                <div class="year-header">
+                    <span class="year-number">2014</span>
+                    <span class="state-count">1 state</span>
+                </div>
+                <div class="states-grid">
+                    <a href="../states/or.html" class="state-pill">Oregon</a>
+                </div>
+            </div>
+
+            <div class="timeline-year">
+                <div class="year-header">
+                    <span class="year-number">2015</span>
+                    <span class="state-count">0 states</span>
+                </div>
+                <div class="no-activity">No new BLLC legislation enacted this year</div>
+            </div>
+
+            <div class="timeline-year">
+                <div class="year-header">
+                    <span class="year-number">2016</span>
+                    <span class="state-count">1 state</span>
+                </div>
+                <div class="states-grid">
+                    <a href="../states/pa.html" class="state-pill">Pennsylvania</a>
+                </div>
+            </div>
+
+            <div class="timeline-year">
+                <div class="year-header">
+                    <span class="year-number">2017</span>
+                    <span class="state-count">0 states</span>
+                </div>
+                <div class="no-activity">No new BLLC legislation enacted this year</div>
+            </div>
+
+            <div class="timeline-year">
+                <div class="year-header">
+                    <span class="year-number">2018</span>
+                    <span class="state-count">2 states</span>
+                    <span class="delaware-badge">Delaware Joins!</span>
+                </div>
+                <div class="states-grid">
+                    <a href="../states/ut.html" class="state-pill">Utah</a>
+                    <a href="../states/de.html" class="state-pill">Delaware</a>
+                </div>
+            </div>
+
+            <div class="timeline-year">
+                <div class="year-header">
+                    <span class="year-number">2019-2024</span>
+                    <span class="state-count">0 states</span>
+                </div>
+                <div class="no-activity">No new BLLC legislation has been enacted since 2018</div>
+            </div>
+        </div>
+
+        <div class="summary-section">
+            <div class="current-states">
+                <h3>States with Benefit LLC Legislation (as of 2024)</h3>
+                <div class="all-states-grid">
+                    <a href="../states/de.html" class="state-pill">Delaware</a>
+                    <a href="../states/md.html" class="state-pill">Maryland</a>
+                    <a href="../states/or.html" class="state-pill">Oregon</a>
+                    <a href="../states/pa.html" class="state-pill">Pennsylvania</a>
+                    <a href="../states/ut.html" class="state-pill">Utah</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer-note">
+            <p>Data maintained by the Grunin Center for Law and Social Entrepreneurship at NYU School of Law</p>
+        </div>
+    </div>
+</body>
+</html>
