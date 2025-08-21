@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Colorado - SELT Legislative History</title>
+    <title>North Carolina - SELT Legislative History</title>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Frank+Ruhl+Libre:wght@400;500&display=swap" rel="stylesheet">
     <style>
         * {
@@ -117,12 +117,12 @@
             border-radius: 12px;
             padding: 25px;
             margin-bottom: 25px;
-            border-left: 4px solid #00abce;
+            border-left: 4px solid #dc3545;
             box-shadow: 0 2px 8px rgba(0,0,0,0.1);
         }
 
-        .form-item:nth-child(even) {
-            border-left-color: #73a535;
+        .form-item.repealed {
+            border-left-color: #ff6b6b;
         }
 
         .form-header {
@@ -142,7 +142,11 @@
         }
 
         .form-status.failed {
-            background: #6c757d;
+            background: #dc3545;
+        }
+
+        .form-status.repealed {
+            background: #ff6b6b;
         }
 
         .form-name {
@@ -217,6 +221,11 @@
             box-shadow: 0 0 0 3px #00abce;
         }
 
+        .timeline-item.repealed::before {
+            background: #ff6b6b;
+            box-shadow: 0 0 0 3px #ff6b6b;
+        }
+
         .timeline-year {
             background: linear-gradient(135deg, #00abce, #73a535);
             color: white;
@@ -225,6 +234,10 @@
             font-weight: 600;
             display: inline-block;
             margin-bottom: 10px;
+        }
+
+        .timeline-year.repealed {
+            background: #ff6b6b;
         }
 
         .timeline-content {
@@ -279,34 +292,52 @@
         
         <div class="header">
             <div class="header-content">
-                <h1>Colorado</h1>
+                <h1>North Carolina</h1>
                 <p>Complete Social Enterprise Legislative History</p>
             </div>
             <div class="header-stats">
                 <div class="summary-card">
-                    <h3>1</h3>
+                    <h3>0</h3>
                     <p>Active Forms</p>
                 </div>
                 <div class="summary-card">
-                    <h3>2013</h3>
-                    <p>First Legislation</p>
+                    <h3>L3C Repealed</h3>
+                    <p>Only State to Repeal</p>
                 </div>
             </div>
         </div>
 
         <div class="forms-section">
-            <h2>Available Social Enterprise Forms</h2>
+            <h2>Repealed Legislation</h2>
+            
+            <div class="form-item repealed">
+                <div class="form-header">
+                    <span class="form-status repealed">⛔ Repealed</span>
+                    <span class="form-name">Low-profit Limited Liability Company (L3C)</span>
+                </div>
+                <div class="form-details">
+                    <h4>North Carolina Limited Liability Company Act</h4>
+                    <p>S.B. 439 repealed North Carolina's L3C statute during the 2013-2014 Session. To date, North Carolina is the only state that has abolished the L3C after initially enacting it.</p>
+                    <div class="citation">
+                        S.B. 439, 2013-2014 Sess. (N.C. 2014)
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="forms-section">
+            <h2>Failed Legislative Attempts</h2>
             
             <div class="form-item">
                 <div class="form-header">
-                    <span class="form-status">✅ Enacted</span>
+                    <span class="form-status failed">❌ Failed</span>
                     <span class="form-name">Benefit Corporation (BCORP)</span>
                 </div>
                 <div class="form-details">
-                    <h4>Public Benefit Corporation Act of Colorado</h4>
-                    <p>Colorado, like Delaware, has deviated from the Model Act, and is also the only state in which the Secretary of State has declared that public benefit corporations may be subject to regulation under a state charitable solicitation act. The Colorado statute was amended in 2022 by SB 22-045 to change PBC conversion voting thresholds from a two-thirds requirement to a simple majority, and eliminate appraisal rights for shareholders objecting to the conversion of a non-PBC to a PBC.</p>
+                    <h4>North Carolina Public Benefit Corporation Act</h4>
+                    <p>H.B. 616 was introduced on April 5, 2017 and failed its second reading on June 26, 2017.</p>
                     <div class="citation">
-                        Col. Rev. Stat. § 7-101-501 to § 511, 6-113-102 (2013), as amended
+                        H.B. 616, 2017-2018 Reg. Sess. (N.C. 2017)
                     </div>
                 </div>
             </div>
@@ -317,41 +348,31 @@
             
             <div class="form-item">
                 <div class="form-header">
-                    <span class="form-status failed">⚪ Not Available</span>
-                    <span class="form-name">Low-profit Limited Liability Company (L3C)</span>
-                </div>
-                <div class="form-details">
-                    <p>Colorado legislature was considering proposed L3C legislation in 2010 and indefinitely postponed it in the same year.</p>
-                </div>
-            </div>
-
-            <div class="form-item">
-                <div class="form-header">
-                    <span class="form-status failed">⚪ Not Available</span>
-                    <span class="form-name">Social Purpose Corporation (SPC)</span>
-                </div>
-                <div class="form-details">
-                    <p>No legislative activity recorded for SPC formation in Colorado.</p>
-                </div>
-            </div>
-
-            <div class="form-item">
-                <div class="form-header">
-                    <span class="form-status failed">⚪ Not Available</span>
+                    <span class="form-status failed">❌ Not Available</span>
                     <span class="form-name">Benefit Limited Liability Company (BLLC)</span>
                 </div>
                 <div class="form-details">
-                    <p>No legislative activity recorded for BLLC formation in Colorado.</p>
+                    <p>No legislative activity recorded for BLLC formation in North Carolina.</p>
                 </div>
             </div>
 
             <div class="form-item">
                 <div class="form-header">
-                    <span class="form-status failed">⚪ Not Available</span>
+                    <span class="form-status failed">❌ Not Available</span>
+                    <span class="form-name">Social Purpose Corporation (SPC)</span>
+                </div>
+                <div class="form-details">
+                    <p>No legislative activity recorded for SPC formation in North Carolina.</p>
+                </div>
+            </div>
+
+            <div class="form-item">
+                <div class="form-header">
+                    <span class="form-status failed">❌ Not Available</span>
                     <span class="form-name">Social Purpose Benefit Limited Partnership (SPBLP)</span>
                 </div>
                 <div class="form-details">
-                    <p>No legislative activity recorded for SPBLP formation in Colorado.</p>
+                    <p>No legislative activity recorded for SPBLP formation in North Carolina.</p>
                 </div>
             </div>
         </div>
@@ -360,10 +381,26 @@
             <h2>Legislative Timeline</h2>
             <div class="timeline">
                 <div class="timeline-item">
-                    <div class="timeline-year">2013</div>
+                    <div class="timeline-year">Pre-2014</div>
                     <div class="timeline-content">
-                        <h4>Public Benefit Corporation Act Enacted</h4>
-                        <p>Colorado enacted the Public Benefit Corporation Act of Colorado, deviating from the Model Act with unique provisions including potential regulation under state charitable solicitation acts.</p>
+                        <h4>L3C Enacted</h4>
+                        <p>North Carolina initially enacted L3C legislation, allowing for the creation of low-profit limited liability companies.</p>
+                    </div>
+                </div>
+
+                <div class="timeline-item repealed">
+                    <div class="timeline-year repealed">2013-2014</div>
+                    <div class="timeline-content">
+                        <h4>L3C Statute Repealed</h4>
+                        <p>S.B. 439 repealed North Carolina's L3C statute, making North Carolina the only state to abolish the L3C form after enacting it.</p>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-year">2017</div>
+                    <div class="timeline-content">
+                        <h4>Benefit Corporation Bill Failed</h4>
+                        <p>H.B. 616 was introduced on April 5, 2017 but failed its second reading on June 26, 2017.</p>
                     </div>
                 </div>
             </div>

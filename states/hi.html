@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Colorado - SELT Legislative History</title>
+    <title>Hawaii - SELT Legislative History</title>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Frank+Ruhl+Libre:wght@400;500&display=swap" rel="stylesheet">
     <style>
         * {
@@ -112,17 +112,36 @@
             margin-bottom: 20px;
         }
 
+        .no-activity-message {
+            text-align: center;
+            padding: 40px;
+            background: rgba(255,255,255,0.8);
+            border-radius: 15px;
+            border: 2px dashed #ccc;
+        }
+
+        .no-activity-message h3 {
+            color: #925333;
+            font-size: 1.4em;
+            margin-bottom: 15px;
+            font-weight: 600;
+        }
+
+        .no-activity-message p {
+            color: #666;
+            font-size: 1.1em;
+            line-height: 1.6;
+            margin-bottom: 20px;
+            font-family: 'Frank Ruhl Libre', serif;
+        }
+
         .form-item {
             background: rgba(255,255,255,0.8);
             border-radius: 12px;
             padding: 25px;
-            margin-bottom: 25px;
-            border-left: 4px solid #00abce;
+            margin-bottom: 20px;
+            border-left: 4px solid #ccc;
             box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-        }
-
-        .form-item:nth-child(even) {
-            border-left-color: #73a535;
         }
 
         .form-header {
@@ -132,7 +151,7 @@
         }
 
         .form-status {
-            background: #28a745;
+            background: #6c757d;
             color: white;
             padding: 4px 12px;
             border-radius: 20px;
@@ -141,20 +160,10 @@
             margin-right: 15px;
         }
 
-        .form-status.failed {
-            background: #6c757d;
-        }
-
         .form-name {
             font-size: 1.3em;
             font-weight: 600;
             color: #925333;
-        }
-
-        .form-details h4 {
-            color: #925333;
-            margin-bottom: 8px;
-            font-size: 1em;
         }
 
         .form-details p {
@@ -162,86 +171,6 @@
             line-height: 1.6;
             margin-bottom: 10px;
             font-family: 'Frank Ruhl Libre', serif;
-        }
-
-        .citation {
-            background: rgba(0, 171, 206, 0.1);
-            padding: 10px;
-            border-radius: 8px;
-            font-family: 'Courier New', monospace;
-            font-size: 0.9em;
-            color: #555;
-            margin-top: 10px;
-        }
-
-        .timeline-section {
-            background: rgba(255,255,255,0.95);
-            border-radius: 20px;
-            padding: 30px;
-            margin-bottom: 30px;
-            backdrop-filter: blur(10px);
-            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
-        }
-
-        .timeline {
-            position: relative;
-            margin-top: 20px;
-        }
-
-        .timeline::before {
-            content: '';
-            position: absolute;
-            left: 30px;
-            top: 0;
-            bottom: 0;
-            width: 2px;
-            background: #00abce;
-        }
-
-        .timeline-item {
-            position: relative;
-            margin-bottom: 30px;
-            padding-left: 70px;
-        }
-
-        .timeline-item::before {
-            content: '';
-            position: absolute;
-            left: 24px;
-            top: 10px;
-            width: 12px;
-            height: 12px;
-            background: #00abce;
-            border-radius: 50%;
-            border: 3px solid white;
-            box-shadow: 0 0 0 3px #00abce;
-        }
-
-        .timeline-year {
-            background: linear-gradient(135deg, #00abce, #73a535);
-            color: white;
-            padding: 5px 15px;
-            border-radius: 20px;
-            font-weight: 600;
-            display: inline-block;
-            margin-bottom: 10px;
-        }
-
-        .timeline-content {
-            background: rgba(255,255,255,0.8);
-            padding: 15px;
-            border-radius: 10px;
-        }
-
-        .timeline-content h4 {
-            color: #925333;
-            margin-bottom: 5px;
-        }
-
-        .timeline-content p {
-            color: #555;
-            font-size: 0.9em;
-            line-height: 1.5;
         }
 
         @media (max-width: 768px) {
@@ -258,18 +187,6 @@
             .header-stats {
                 justify-content: center;
             }
-            
-            .timeline::before {
-                left: 15px;
-            }
-            
-            .timeline-item {
-                padding-left: 40px;
-            }
-            
-            .timeline-item::before {
-                left: 9px;
-            }
         }
     </style>
 </head>
@@ -279,36 +196,27 @@
         
         <div class="header">
             <div class="header-content">
-                <h1>Colorado</h1>
+                <h1>Hawaii</h1>
                 <p>Complete Social Enterprise Legislative History</p>
             </div>
             <div class="header-stats">
                 <div class="summary-card">
-                    <h3>1</h3>
+                    <h3>0</h3>
                     <p>Active Forms</p>
                 </div>
                 <div class="summary-card">
-                    <h3>2013</h3>
+                    <h3>—</h3>
                     <p>First Legislation</p>
                 </div>
             </div>
         </div>
 
         <div class="forms-section">
-            <h2>Available Social Enterprise Forms</h2>
+            <h2>Legislative Status</h2>
             
-            <div class="form-item">
-                <div class="form-header">
-                    <span class="form-status">✅ Enacted</span>
-                    <span class="form-name">Benefit Corporation (BCORP)</span>
-                </div>
-                <div class="form-details">
-                    <h4>Public Benefit Corporation Act of Colorado</h4>
-                    <p>Colorado, like Delaware, has deviated from the Model Act, and is also the only state in which the Secretary of State has declared that public benefit corporations may be subject to regulation under a state charitable solicitation act. The Colorado statute was amended in 2022 by SB 22-045 to change PBC conversion voting thresholds from a two-thirds requirement to a simple majority, and eliminate appraisal rights for shareholders objecting to the conversion of a non-PBC to a PBC.</p>
-                    <div class="citation">
-                        Col. Rev. Stat. § 7-101-501 to § 511, 6-113-102 (2013), as amended
-                    </div>
-                </div>
+            <div class="no-activity-message">
+                <h3>No Social Enterprise Legislation</h3>
+                <p>Hawaii has not introduced or enacted any corporate forms for social enterprises (Benefit Corporations, L3Cs, Social Purpose Corporations, Benefit LLCs, or Social Purpose Benefit Limited Partnerships).</p>
             </div>
         </div>
 
@@ -317,54 +225,51 @@
             
             <div class="form-item">
                 <div class="form-header">
-                    <span class="form-status failed">⚪ Not Available</span>
+                    <span class="form-status">⚪ Not Available</span>
+                    <span class="form-name">Benefit Corporation (BCORP)</span>
+                </div>
+                <div class="form-details">
+                    <p>No legislative activity recorded for Benefit Corporation formation in Hawaii.</p>
+                </div>
+            </div>
+
+            <div class="form-item">
+                <div class="form-header">
+                    <span class="form-status">⚪ Not Available</span>
                     <span class="form-name">Low-profit Limited Liability Company (L3C)</span>
                 </div>
                 <div class="form-details">
-                    <p>Colorado legislature was considering proposed L3C legislation in 2010 and indefinitely postponed it in the same year.</p>
+                    <p>No legislative activity recorded for L3C formation in Hawaii.</p>
                 </div>
             </div>
 
             <div class="form-item">
                 <div class="form-header">
-                    <span class="form-status failed">⚪ Not Available</span>
+                    <span class="form-status">⚪ Not Available</span>
                     <span class="form-name">Social Purpose Corporation (SPC)</span>
                 </div>
                 <div class="form-details">
-                    <p>No legislative activity recorded for SPC formation in Colorado.</p>
+                    <p>No legislative activity recorded for SPC formation in Hawaii.</p>
                 </div>
             </div>
 
             <div class="form-item">
                 <div class="form-header">
-                    <span class="form-status failed">⚪ Not Available</span>
+                    <span class="form-status">⚪ Not Available</span>
                     <span class="form-name">Benefit Limited Liability Company (BLLC)</span>
                 </div>
                 <div class="form-details">
-                    <p>No legislative activity recorded for BLLC formation in Colorado.</p>
+                    <p>No legislative activity recorded for BLLC formation in Hawaii.</p>
                 </div>
             </div>
 
             <div class="form-item">
                 <div class="form-header">
-                    <span class="form-status failed">⚪ Not Available</span>
+                    <span class="form-status">⚪ Not Available</span>
                     <span class="form-name">Social Purpose Benefit Limited Partnership (SPBLP)</span>
                 </div>
                 <div class="form-details">
-                    <p>No legislative activity recorded for SPBLP formation in Colorado.</p>
-                </div>
-            </div>
-        </div>
-
-        <div class="timeline-section">
-            <h2>Legislative Timeline</h2>
-            <div class="timeline">
-                <div class="timeline-item">
-                    <div class="timeline-year">2013</div>
-                    <div class="timeline-content">
-                        <h4>Public Benefit Corporation Act Enacted</h4>
-                        <p>Colorado enacted the Public Benefit Corporation Act of Colorado, deviating from the Model Act with unique provisions including potential regulation under state charitable solicitation acts.</p>
-                    </div>
+                    <p>No legislative activity recorded for SPBLP formation in Hawaii.</p>
                 </div>
             </div>
         </div>

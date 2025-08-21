@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Colorado - SELT Legislative History</title>
+    <title>Massachusetts - SELT Legislative History</title>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Frank+Ruhl+Libre:wght@400;500&display=swap" rel="stylesheet">
     <style>
         * {
@@ -109,6 +109,178 @@
             color: #925333;
             font-size: 1.8em;
             font-weight: 600;
+            display: inline-block;
+            margin-bottom: 10px;
+        }
+
+        .timeline-content {
+            background: rgba(255,255,255,0.8);
+            padding: 15px;
+            border-radius: 10px;
+        }
+
+        .timeline-content h4 {
+            color: #925333;
+            margin-bottom: 5px;
+        }
+
+        .timeline-content p {
+            color: #555;
+            font-size: 0.9em;
+            line-height: 1.5;
+        }
+
+        @media (max-width: 768px) {
+            .header {
+                flex-direction: column;
+                text-align: center;
+                gap: 20px;
+            }
+            
+            .header-content h1 {
+                font-size: 2em;
+            }
+            
+            .header-stats {
+                justify-content: center;
+            }
+            
+            .timeline::before {
+                left: 15px;
+            }
+            
+            .timeline-item {
+                padding-left: 40px;
+            }
+            
+            .timeline-item::before {
+                left: 9px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <a href="../index.html" class="back-link">← Back to SELT Map</a>
+        
+        <div class="header">
+            <div class="header-content">
+                <h1>Massachusetts</h1>
+                <p>Complete Social Enterprise Legislative History</p>
+            </div>
+            <div class="header-stats">
+                <div class="summary-card">
+                    <h3>1</h3>
+                    <p>Active Form</p>
+                </div>
+                <div class="summary-card">
+                    <h3>2013</h3>
+                    <p>First Legislation</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="forms-section">
+            <h2>Available Social Enterprise Forms</h2>
+            
+            <div class="form-item">
+                <div class="form-header">
+                    <span class="form-status">✅ Enacted</span>
+                    <span class="form-name">Benefit Corporation (BCORP)</span>
+                </div>
+                <div class="form-details">
+                    <h4>Massachusetts Benefit Corporation Act</h4>
+                    <p>Massachusetts enacted benefit corporation legislation in 2013, establishing a legal framework for corporations to pursue both profit and public benefit purposes.</p>
+                    <div class="citation">
+                        Mass. Gen. Laws Ch. 156E, §§ 1-16 (2013)
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="forms-section">
+            <h2>Forms Not Available</h2>
+            
+            <div class="form-item">
+                <div class="form-header">
+                    <span class="form-status failed">❌ Not Available</span>
+                    <span class="form-name">Low-profit Limited Liability Company (L3C)</span>
+                </div>
+                <div class="form-details">
+                    <p>An Act Relative to Creating Low-Profit Limited Liability Companies has been introduced multiple times. S. 1962 reintroduced L3C legislation on January 20, 2017. Previous versions of this bill, including S. 111/S. 2145 (189th Gen. Ct. 2015-2016) and H.B. 1868 (187th Gen. Ct. 2011-2012), died in committee.</p>
+                </div>
+            </div>
+
+            <div class="form-item">
+                <div class="form-header">
+                    <span class="form-status failed">❌ Not Available</span>
+                    <span class="form-name">Benefit Limited Liability Company (BLLC)</span>
+                </div>
+                <div class="form-details">
+                    <p>No legislative activity recorded for BLLC formation in Massachusetts.</p>
+                </div>
+            </div>
+
+            <div class="form-item">
+                <div class="form-header">
+                    <span class="form-status failed">❌ Not Available</span>
+                    <span class="form-name">Social Purpose Corporation (SPC)</span>
+                </div>
+                <div class="form-details">
+                    <p>No legislative activity recorded for SPC formation in Massachusetts.</p>
+                </div>
+            </div>
+
+            <div class="form-item">
+                <div class="form-header">
+                    <span class="form-status failed">❌ Not Available</span>
+                    <span class="form-name">Social Purpose Benefit Limited Partnership (SPBLP)</span>
+                </div>
+                <div class="form-details">
+                    <p>No legislative activity recorded for SPBLP formation in Massachusetts.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="timeline-section">
+            <h2>Legislative Timeline</h2>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-year">2011-2012</div>
+                    <div class="timeline-content">
+                        <h4>L3C Legislation Introduced</h4>
+                        <p>H.B. 1868 was introduced during the 187th General Court but died in committee.</p>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-year">2013</div>
+                    <div class="timeline-content">
+                        <h4>Benefit Corporation Act Enacted</h4>
+                        <p>Massachusetts successfully enacted benefit corporation legislation, establishing Chapter 156E of the General Laws.</p>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-year">2015-2016</div>
+                    <div class="timeline-content">
+                        <h4>Second L3C Attempt</h4>
+                        <p>S. 111/S. 2145 were introduced during the 189th General Court but died in committee.</p>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-year">2017-2018</div>
+                    <div class="timeline-content">
+                        <h4>Third L3C Attempt</h4>
+                        <p>S. 1962 reintroduced L3C legislation on January 20, 2017, continuing efforts to establish low-profit limited liability companies in Massachusetts.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
             margin-bottom: 20px;
         }
 
@@ -142,7 +314,7 @@
         }
 
         .form-status.failed {
-            background: #6c757d;
+            background: #dc3545;
         }
 
         .form-name {
@@ -223,151 +395,3 @@
             padding: 5px 15px;
             border-radius: 20px;
             font-weight: 600;
-            display: inline-block;
-            margin-bottom: 10px;
-        }
-
-        .timeline-content {
-            background: rgba(255,255,255,0.8);
-            padding: 15px;
-            border-radius: 10px;
-        }
-
-        .timeline-content h4 {
-            color: #925333;
-            margin-bottom: 5px;
-        }
-
-        .timeline-content p {
-            color: #555;
-            font-size: 0.9em;
-            line-height: 1.5;
-        }
-
-        @media (max-width: 768px) {
-            .header {
-                flex-direction: column;
-                text-align: center;
-                gap: 20px;
-            }
-            
-            .header-content h1 {
-                font-size: 2em;
-            }
-            
-            .header-stats {
-                justify-content: center;
-            }
-            
-            .timeline::before {
-                left: 15px;
-            }
-            
-            .timeline-item {
-                padding-left: 40px;
-            }
-            
-            .timeline-item::before {
-                left: 9px;
-            }
-        }
-    </style>
-</head>
-<body>
-    <div class="container">
-        <a href="../index.html" class="back-link">← Back to SELT Map</a>
-        
-        <div class="header">
-            <div class="header-content">
-                <h1>Colorado</h1>
-                <p>Complete Social Enterprise Legislative History</p>
-            </div>
-            <div class="header-stats">
-                <div class="summary-card">
-                    <h3>1</h3>
-                    <p>Active Forms</p>
-                </div>
-                <div class="summary-card">
-                    <h3>2013</h3>
-                    <p>First Legislation</p>
-                </div>
-            </div>
-        </div>
-
-        <div class="forms-section">
-            <h2>Available Social Enterprise Forms</h2>
-            
-            <div class="form-item">
-                <div class="form-header">
-                    <span class="form-status">✅ Enacted</span>
-                    <span class="form-name">Benefit Corporation (BCORP)</span>
-                </div>
-                <div class="form-details">
-                    <h4>Public Benefit Corporation Act of Colorado</h4>
-                    <p>Colorado, like Delaware, has deviated from the Model Act, and is also the only state in which the Secretary of State has declared that public benefit corporations may be subject to regulation under a state charitable solicitation act. The Colorado statute was amended in 2022 by SB 22-045 to change PBC conversion voting thresholds from a two-thirds requirement to a simple majority, and eliminate appraisal rights for shareholders objecting to the conversion of a non-PBC to a PBC.</p>
-                    <div class="citation">
-                        Col. Rev. Stat. § 7-101-501 to § 511, 6-113-102 (2013), as amended
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <div class="forms-section">
-            <h2>Forms Not Available</h2>
-            
-            <div class="form-item">
-                <div class="form-header">
-                    <span class="form-status failed">⚪ Not Available</span>
-                    <span class="form-name">Low-profit Limited Liability Company (L3C)</span>
-                </div>
-                <div class="form-details">
-                    <p>Colorado legislature was considering proposed L3C legislation in 2010 and indefinitely postponed it in the same year.</p>
-                </div>
-            </div>
-
-            <div class="form-item">
-                <div class="form-header">
-                    <span class="form-status failed">⚪ Not Available</span>
-                    <span class="form-name">Social Purpose Corporation (SPC)</span>
-                </div>
-                <div class="form-details">
-                    <p>No legislative activity recorded for SPC formation in Colorado.</p>
-                </div>
-            </div>
-
-            <div class="form-item">
-                <div class="form-header">
-                    <span class="form-status failed">⚪ Not Available</span>
-                    <span class="form-name">Benefit Limited Liability Company (BLLC)</span>
-                </div>
-                <div class="form-details">
-                    <p>No legislative activity recorded for BLLC formation in Colorado.</p>
-                </div>
-            </div>
-
-            <div class="form-item">
-                <div class="form-header">
-                    <span class="form-status failed">⚪ Not Available</span>
-                    <span class="form-name">Social Purpose Benefit Limited Partnership (SPBLP)</span>
-                </div>
-                <div class="form-details">
-                    <p>No legislative activity recorded for SPBLP formation in Colorado.</p>
-                </div>
-            </div>
-        </div>
-
-        <div class="timeline-section">
-            <h2>Legislative Timeline</h2>
-            <div class="timeline">
-                <div class="timeline-item">
-                    <div class="timeline-year">2013</div>
-                    <div class="timeline-content">
-                        <h4>Public Benefit Corporation Act Enacted</h4>
-                        <p>Colorado enacted the Public Benefit Corporation Act of Colorado, deviating from the Model Act with unique provisions including potential regulation under state charitable solicitation acts.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</body>
-</html>

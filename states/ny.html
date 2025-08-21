@@ -17,45 +17,86 @@
             background: linear-gradient(135deg, #00abce 0%, #73a535 100%);
             min-height: 100vh;
             color: #333;
+            padding: 20px 0;
         }
 
         .container {
             max-width: 1200px;
             margin: 0 auto;
-            padding: 20px;
+            padding: 0 20px;
+        }
+
+        .back-link {
+            display: inline-block;
+            background: linear-gradient(135deg, #00abce, #73a535);
+            color: white;
+            text-decoration: none;
+            padding: 12px 24px;
+            border-radius: 25px;
+            font-weight: 500;
+            margin-bottom: 30px;
+            transition: transform 0.2s ease;
+        }
+
+        .back-link:hover {
+            transform: translateY(-2px);
+            background: linear-gradient(135deg, #925333, #73a535);
         }
 
         .header {
-            text-align: center;
-            margin-bottom: 40px;
-            color: white;
-        }
-
-        .header h1 {
-            font-size: 2.5em;
-            margin-bottom: 10px;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
-        }
-
-        .back-btn {
-            display: inline-block;
-            padding: 12px 24px;
-            background: rgba(255,255,255,0.2);
-            color: white;
-            text-decoration: none;
-            border-radius: 25px;
-            margin-bottom: 20px;
+            background: rgba(255,255,255,0.95);
+            border-radius: 20px;
+            padding: 30px;
+            margin-bottom: 30px;
             backdrop-filter: blur(10px);
-            border: 1px solid rgba(255,255,255,0.3);
-            transition: all 0.3s ease;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
         }
 
-        .back-btn:hover {
-            background: rgba(255,255,255,0.3);
-            transform: translateY(-2px);
+        .header-content h1 {
+            color: #925333;
+            font-size: 2.5em;
+            font-weight: 700;
+            margin-bottom: 5px;
         }
 
-        .content-card {
+        .header-content p {
+            color: #555;
+            font-size: 1.2em;
+            font-family: 'Frank Ruhl Libre', serif;
+        }
+
+        .header-stats {
+            display: flex;
+            gap: 15px;
+        }
+
+        .summary-card {
+            background: white;
+            color: #333;
+            padding: 15px 20px;
+            border-radius: 12px;
+            text-align: center;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+            min-width: 120px;
+        }
+
+        .summary-card h3 {
+            font-size: 1.5em;
+            font-weight: bold;
+            margin-bottom: 3px;
+            color: #925333;
+        }
+
+        .summary-card p {
+            font-size: 0.85em;
+            color: #666;
+            margin: 0;
+        }
+
+        .forms-section {
             background: rgba(255,255,255,0.95);
             border-radius: 20px;
             padding: 30px;
@@ -64,43 +105,87 @@
             box-shadow: 0 10px 30px rgba(0,0,0,0.2);
         }
 
-        .summary-stats {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 20px;
-            margin-bottom: 30px;
+        .forms-section h2 {
+            color: #925333;
+            font-size: 1.8em;
+            font-weight: 600;
+            margin-bottom: 20px;
         }
 
-        .stat-card {
-            background: linear-gradient(135deg, #00abce, #73a535);
+        .form-item {
+            background: rgba(255,255,255,0.8);
+            border-radius: 12px;
+            padding: 25px;
+            margin-bottom: 25px;
+            border-left: 4px solid #00abce;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+
+        .form-item:nth-child(even) {
+            border-left-color: #73a535;
+        }
+
+        .form-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 15px;
+        }
+
+        .form-status {
+            background: #28a745;
             color: white;
-            padding: 20px;
-            border-radius: 15px;
-            text-align: center;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 0.8em;
+            font-weight: 500;
+            margin-right: 15px;
         }
 
-        .stat-card:nth-child(2) {
-            background: linear-gradient(135deg, #925333, #73a535);
+        .form-status.failed {
+            background: #dc3545;
         }
 
-        .stat-card:nth-child(3) {
-            background: linear-gradient(135deg, #00abce, #925333);
+        .form-name {
+            font-size: 1.3em;
+            font-weight: 600;
+            color: #925333;
         }
 
-        .stat-card:nth-child(4) {
-            background: linear-gradient(135deg, #73a535, #00abce);
+        .form-details h4 {
+            color: #925333;
+            margin-bottom: 8px;
+            font-size: 1em;
         }
 
-        .stat-number {
-            font-size: 2em;
-            font-weight: bold;
-            display: block;
+        .form-details p {
+            color: #555;
+            line-height: 1.6;
+            margin-bottom: 10px;
+            font-family: 'Frank Ruhl Libre', serif;
+        }
+
+        .citation {
+            background: rgba(0, 171, 206, 0.1);
+            padding: 10px;
+            border-radius: 8px;
+            font-family: 'Courier New', monospace;
+            font-size: 0.9em;
+            color: #555;
+            margin-top: 10px;
+        }
+
+        .timeline-section {
+            background: rgba(255,255,255,0.95);
+            border-radius: 20px;
+            padding: 30px;
+            margin-bottom: 30px;
+            backdrop-filter: blur(10px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
         }
 
         .timeline {
             position: relative;
-            padding: 20px 0;
+            margin-top: 20px;
         }
 
         .timeline::before {
@@ -110,153 +195,194 @@
             top: 0;
             bottom: 0;
             width: 2px;
-            background: linear-gradient(to bottom, #00abce, #73a535);
+            background: #00abce;
         }
 
         .timeline-item {
             position: relative;
             margin-bottom: 30px;
-            padding-left: 80px;
+            padding-left: 70px;
+        }
+
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: 24px;
+            top: 10px;
+            width: 12px;
+            height: 12px;
+            background: #00abce;
+            border-radius: 50%;
+            border: 3px solid white;
+            box-shadow: 0 0 0 3px #00abce;
         }
 
         .timeline-year {
-            position: absolute;
-            left: 0;
-            top: 0;
-            width: 60px;
-            height: 60px;
             background: linear-gradient(135deg, #00abce, #73a535);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
             color: white;
-            font-weight: bold;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-weight: 600;
+            display: inline-block;
+            margin-bottom: 10px;
         }
 
         .timeline-content {
-            background: #f8f9fa;
-            padding: 20px;
-            border-radius: 15px;
-            border-left: 4px solid #00abce;
-        }
-
-        .activity-badge {
-            display: inline-block;
-            padding: 5px 12px;
-            border-radius: 20px;
-            font-size: 0.9em;
-            margin: 5px 5px 5px 0;
-            font-weight: 500;
-        }
-
-        .enacted { background: #d4edda; color: #155724; }
-        .no-activity { background: #e9ecef; color: #6c757d; }
-
-        .forms-list {
-            margin-top: 15px;
-        }
-
-        .form-item {
-            background: white;
+            background: rgba(255,255,255,0.8);
             padding: 15px;
-            margin: 10px 0;
             border-radius: 10px;
-            border-left: 4px solid #00abce;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
         }
 
-        .form-code {
-            font-weight: bold;
-            color: #00abce;
+        .timeline-content h4 {
+            color: #925333;
+            margin-bottom: 5px;
         }
 
-        .form-name {
-            color: #666;
+        .timeline-content p {
+            color: #555;
             font-size: 0.9em;
+            line-height: 1.5;
         }
 
         @media (max-width: 768px) {
-            .container { padding: 15px; }
-            .header h1 { font-size: 2em; }
-            .timeline-item { padding-left: 70px; }
-            .timeline-year { width: 50px; height: 50px; font-size: 0.9em; }
+            .header {
+                flex-direction: column;
+                text-align: center;
+                gap: 20px;
+            }
+            
+            .header-content h1 {
+                font-size: 2em;
+            }
+            
+            .header-stats {
+                justify-content: center;
+            }
+            
+            .timeline::before {
+                left: 15px;
+            }
+            
+            .timeline-item {
+                padding-left: 40px;
+            }
+            
+            .timeline-item::before {
+                left: 9px;
+            }
         }
     </style>
 </head>
 <body>
     <div class="container">
+        <a href="../index.html" class="back-link">← Back to SELT Map</a>
+        
         <div class="header">
-            <a href="../index.html" class="back-btn">← Back to Map</a>
-            <h1>🗽 New York Legislative History</h1>
-            <p>Major Social Enterprise Hub</p>
-        </div>
-
-        <div class="content-card">
-            <h2>📊 Summary Statistics</h2>
-            <div class="summary-stats">
-                <div class="stat-card">
-                    <span class="stat-number">1</span>
-                    <span>Form Currently Available</span>
-                </div>
-                <div class="stat-card">
-                    <span class="stat-number">0</span>
-                    <span>Failed Attempts</span>
-                </div>
-                <div class="stat-card">
-                    <span class="stat-number">0</span>
-                    <span>Rescinded Forms</span>
-                </div>
-                <div class="stat-card">
-                    <span class="stat-number">2013</span>
-                    <span>First Activity</span>
-                </div>
+            <div class="header-content">
+                <h1>New York</h1>
+                <p>Complete Social Enterprise Legislative History</p>
             </div>
-
-            <h3>🏢 Currently Available Corporate Forms</h3>
-            <div class="forms-list">
-                <div class="form-item">
-                    <div class="form-code">BCORP - Benefit Corporation</div>
-                    <div class="form-name">New York Benefit Corporation</div>
+            <div class="header-stats">
+                <div class="summary-card">
+                    <h3>1</h3>
+                    <p>Active Form</p>
+                </div>
+                <div class="summary-card">
+                    <h3>2013</h3>
+                    <p>First Legislation</p>
                 </div>
             </div>
         </div>
 
-        <div class="content-card">
-            <h2>📅 Legislative Timeline</h2>
+        <div class="forms-section">
+            <h2>Available Social Enterprise Forms</h2>
+            
+            <div class="form-item">
+                <div class="form-header">
+                    <span class="form-status">✅ Enacted</span>
+                    <span class="form-name">Benefit Corporation (BCORP)</span>
+                </div>
+                <div class="form-details">
+                    <h4>New York Benefit Corporation Act</h4>
+                    <p>New York enacted benefit corporation legislation in 2013, establishing sections 1701-1709 of the Business Corporation Law.</p>
+                    <div class="citation">
+                        N.Y. Bus. Corp. Law §§ 1701-1709 (2013)
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="forms-section">
+            <h2>Forms Not Available</h2>
+            
+            <div class="form-item">
+                <div class="form-header">
+                    <span class="form-status failed">❌ Not Available</span>
+                    <span class="form-name">Low-profit Limited Liability Company (L3C)</span>
+                </div>
+                <div class="form-details">
+                    <p>An Act to Amend the Limited Liability Company Law, in Relation to Establishing the L3C Act Regarding Low-Profit Limited Liability Companies has been introduced multiple times. New York's L3C bill (A 10060) was introduced on March 14, 2018. The bill was referred to the Corporations, Authorities, and Commissions and the bills enacting clause was stricken on April 9, 2018, meaning the main sponsor, Assemblywoman Amy Paulin, removed her name from the bill and the bill died. This marks the second consecutive year that New York's L3C bill has died. A previous version of the bill (A 5859), which was introduced on February 16, 2017, died on January 1, 2018 when the enacting clause was stricken.</p>
+                </div>
+            </div>
+
+            <div class="form-item">
+                <div class="form-header">
+                    <span class="form-status failed">❌ Not Available</span>
+                    <span class="form-name">Benefit Limited Liability Company (BLLC)</span>
+                </div>
+                <div class="form-details">
+                    <p>No legislative activity recorded for BLLC formation in New York.</p>
+                </div>
+            </div>
+
+            <div class="form-item">
+                <div class="form-header">
+                    <span class="form-status failed">❌ Not Available</span>
+                    <span class="form-name">Social Purpose Corporation (SPC)</span>
+                </div>
+                <div class="form-details">
+                    <p>No legislative activity recorded for SPC formation in New York.</p>
+                </div>
+            </div>
+
+            <div class="form-item">
+                <div class="form-header">
+                    <span class="form-status failed">❌ Not Available</span>
+                    <span class="form-name">Social Purpose Benefit Limited Partnership (SPBLP)</span>
+                </div>
+                <div class="form-details">
+                    <p>No legislative activity recorded for SPBLP formation in New York.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="timeline-section">
+            <h2>Legislative Timeline</h2>
             <div class="timeline">
                 <div class="timeline-item">
                     <div class="timeline-year">2013</div>
                     <div class="timeline-content">
-                        <h4>Benefit Corporation Authorization</h4>
-                        <span class="activity-badge enacted">✅ BCORP Enacted</span>
-                        <p>New York joins the first wave of benefit corporation states, recognizing the importance of providing legal structures for mission-driven businesses in one of the world's major business centers.</p>
-                        <p>This positions New York as an attractive jurisdiction for social enterprises and impact investors seeking established legal frameworks.</p>
+                        <h4>Benefit Corporation Act Enacted</h4>
+                        <p>New York enacted benefit corporation legislation, establishing the legal framework for corporations to pursue both profit and public benefit.</p>
                     </div>
                 </div>
 
                 <div class="timeline-item">
-                    <div class="timeline-year">2024</div>
+                    <div class="timeline-year">2017</div>
                     <div class="timeline-content">
-                        <h4>Current Status</h4>
-                        <span class="activity-badge no-activity">⚪ No New Activity</span>
-                        <p>New York maintains its benefit corporation legislation established in 2013. As a major financial and business center, New York's BCORP framework supports a thriving social enterprise ecosystem.</p>
-                        <p><em>New York continues to be a leading jurisdiction for social enterprises and impact investing</em></p>
+                        <h4>First L3C Bill Dies</h4>
+                        <p>A 5859 was introduced on February 16, 2017, to establish Low-Profit Limited Liability Companies. The bill died on January 1, 2018 when the enacting clause was stricken after being referred to the Corporations, Authorities, and Commissions.</p>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-year">2018</div>
+                    <div class="timeline-content">
+                        <h4>Second L3C Bill Dies</h4>
+                        <p>A 10060 was introduced on March 14, 2018. The bill's enacting clause was stricken on April 9, 2018, with the main sponsor, Assemblywoman Amy Paulin, removing her name from the bill, marking the second consecutive year that New York's L3C bill died.</p>
                     </div>
                 </div>
             </div>
-        </div>
-
-        <div class="content-card">
-            <h2>📋 New York's Strategic Importance</h2>
-            <p><strong>Financial Capital:</strong> As home to Wall Street and a major global financial center, New York's benefit corporation legislation provides crucial legal infrastructure for the growing impact investing sector.</p>
-            
-            <p><strong>Business Hub:</strong> New York's position as a major business center makes its BCORP legislation particularly valuable for social enterprises seeking to access capital, talent, and markets in one of the world's most important economic hubs.</p>
-            
-            <p><strong>Early Adoption:</strong> By enacting benefit corporation legislation in 2013, New York demonstrated early recognition of the importance of legal structures that support businesses pursuing both profit and social/environmental impact.</p>
-            
-            <p><strong>Ecosystem Support:</strong> New York's mature business ecosystem, combined with benefit corporation legislation, creates an environment conducive to social enterprise development and impact investing initiatives.</p>
         </div>
     </div>
 </body>
