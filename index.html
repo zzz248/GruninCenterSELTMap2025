@@ -138,20 +138,166 @@
             font-size: 16px;
         }
 
+        /* UPDATED MAP CONTAINER WITH INTEGRATED STATS */
         .map-container {
             background: rgba(255,255,255,0.95);
             border-radius: 20px;
-            padding: 20px;
             backdrop-filter: blur(10px);
             box-shadow: 0 10px 30px rgba(0,0,0,0.2);
-            height: 600px;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
             margin-bottom: 30px;
         }
 
         #map {
-            height: 100%;
-            border-radius: 15px;
+            height: 500px;
+            border-radius: 15px 15px 0 0;
             overflow: hidden;
+        }
+
+        /* NEW VISUAL STATS BAR */
+        .stats-bar {
+            background: linear-gradient(to bottom, rgba(255,255,255,1), rgba(248,248,248,1));
+            border-top: 3px solid #00abce;
+            padding: 20px 25px;
+            display: flex;
+            align-items: stretch;
+            gap: 30px;
+            min-height: 140px;
+        }
+
+        .stats-year-indicator {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 0 20px;
+            border-right: 2px solid rgba(0,171,206,0.2);
+        }
+
+        .year-badge {
+            background: linear-gradient(135deg, #00abce, #73a535);
+            color: white;
+            padding: 12px 24px;
+            border-radius: 25px;
+            font-weight: 700;
+            font-size: 1.8em;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+            margin-bottom: 8px;
+        }
+
+        .year-label {
+            color: #925333;
+            font-weight: 500;
+            font-size: 0.9em;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .forms-visual {
+            flex: 1;
+            display: flex;
+            gap: 20px;
+            align-items: flex-end;
+            padding: 10px 0;
+            justify-content: center;
+        }
+
+        /* Clickable Form Bar */
+        .form-bar {
+            flex: 1;
+            max-width: 150px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: flex-end;
+            position: relative;
+            cursor: pointer;
+            transition: transform 0.2s ease;
+        }
+
+        .form-bar:hover {
+            transform: translateY(-5px);
+        }
+
+        .form-bar-wrapper {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-decoration: none;
+            color: inherit;
+        }
+
+        .form-bar-count {
+            background: #925333;
+            color: white;
+            padding: 4px 12px;
+            border-radius: 15px;
+            font-size: 0.9em;
+            font-weight: 600;
+            margin-bottom: 8px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+            transition: background 0.3s ease;
+        }
+
+        .form-bar:hover .form-bar-count {
+            background: #73a535;
+        }
+
+        .form-bar-fill {
+            width: 60px;
+            background: linear-gradient(180deg, #00abce, #73a535);
+            border-radius: 10px 10px 0 0;
+            transition: all 0.3s ease;
+            position: relative;
+            min-height: 10px;
+            box-shadow: 0 -2px 10px rgba(0,171,206,0.3);
+        }
+
+        .form-bar:hover .form-bar-fill {
+            box-shadow: 0 -4px 20px rgba(0,171,206,0.5);
+            background: linear-gradient(180deg, #00c4e8, #7fb53f);
+        }
+
+        .form-bar-label {
+            background: rgba(146, 83, 51, 0.1);
+            padding: 8px 15px;
+            border-radius: 0 0 10px 10px;
+            width: 100%;
+            text-align: center;
+            font-size: 0.85em;
+            font-weight: 600;
+            color: #925333;
+            border: 2px solid rgba(146, 83, 51, 0.2);
+            border-top: none;
+            margin-top: -2px;
+            transition: all 0.3s ease;
+        }
+
+        .form-bar:hover .form-bar-label {
+            background: rgba(0, 171, 206, 0.1);
+            border-color: rgba(0, 171, 206, 0.3);
+        }
+
+        .form-bar-states {
+            font-size: 0.7em;
+            color: #666;
+            font-weight: 400;
+            margin-top: 2px;
+        }
+
+        .click-hint {
+            font-size: 0.65em;
+            color: #00abce;
+            margin-top: 4px;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .form-bar:hover .click-hint {
+            opacity: 1;
         }
 
         .content-section {
@@ -315,51 +461,6 @@
             text-align: center;
         }
 
-        .stats-summary {
-            display: flex;
-            flex-direction: column;
-            gap: 20px;
-            margin-bottom: 20px;
-        }
-
-        .form-summary {
-            background: rgba(255,255,255,0.8);
-            border-radius: 12px;
-            padding: 20px;
-            border-left: 4px solid #00abce;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-        }
-
-        .form-summary:nth-child(1) { border-left-color: #00abce; }
-        .form-summary:nth-child(2) { border-left-color: #73a535; }
-        .form-summary:nth-child(3) { border-left-color: #925333; }
-        .form-summary:nth-child(4) { border-left-color: #00abce; }
-        .form-summary:nth-child(5) { border-left-color: #73a535; }
-
-        .form-title {
-            color: #925333;
-            font-size: 1.2em;
-            font-weight: 600;
-            margin-bottom: 10px;
-            font-family: 'Montserrat', sans-serif;
-        }
-
-        .form-states {
-            color: #555;
-            font-size: 1em;
-            line-height: 1.5;
-            font-family: 'Frank Ruhl Libre', serif;
-        }
-
-        .no-forms-message {
-            text-align: center;
-            color: #666;
-            font-style: italic;
-            padding: 30px;
-            background: rgba(255,255,255,0.8);
-            border-radius: 12px;
-        }
-
         .forms-definitions {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -431,7 +532,34 @@
             }
 
             .map-container {
+                height: auto;
+            }
+
+            #map {
                 height: 400px;
+            }
+
+            .stats-bar {
+                flex-direction: column;
+                align-items: center;
+                gap: 20px;
+                padding: 20px;
+            }
+
+            .stats-year-indicator {
+                border-right: none;
+                border-bottom: 2px solid rgba(0,171,206,0.2);
+                padding-bottom: 15px;
+            }
+
+            .forms-visual {
+                width: 100%;
+                justify-content: space-around;
+                flex-wrap: wrap;
+            }
+
+            .form-bar {
+                max-width: 100px;
             }
 
             .content-section {
@@ -470,8 +598,17 @@
                 font-size: 1.5em;
             }
 
-            .stats-summary {
-                grid-template-columns: 1fr;
+            .form-bar {
+                max-width: 60px;
+            }
+
+            .form-bar-label {
+                font-size: 0.7em;
+                padding: 6px 10px;
+            }
+
+            .form-bar-states {
+                display: none;
             }
         }
     </style>
@@ -564,12 +701,17 @@
 
         <div class="map-container">
             <div id="map"></div>
-        </div>
-
-        <div class="content-section" id="statsSection">
-            <h2 id="statsTitle">2024 Status Summary</h2>
-            <div class="stats-summary" id="statsSummary">
-                <!-- Stats will be populated by JavaScript -->
+            
+            <!-- NEW VISUAL STATS BAR -->
+            <div class="stats-bar">
+                <div class="stats-year-indicator">
+                    <div class="year-badge" id="yearBadge">2024</div>
+                    <div class="year-label">Active Forms</div>
+                </div>
+                
+                <div class="forms-visual" id="formsVisual">
+                    <!-- Form bars will be dynamically populated -->
+                </div>
             </div>
         </div>
 
@@ -586,9 +728,9 @@
                         <a href="https://socentlawtracker.org/wp-content/uploads/2024/09/2023_2024_Grunin_Tepper_Social-Enterprise-and-Law-Report.pdf" target="_blank" class="report-link">
                             📊 2023-2024 Report
                         </a>
-                <a href="https://socentlawtracker.org/wp-content/uploads/2023/09/2022_2023_Grunin_Tepper_Report.pdf" target="_blank" class="report-link">
-                    📊 2022-2023 Report
-                </a>
+                        <a href="https://socentlawtracker.org/wp-content/uploads/2023/09/2022_2023_Grunin_Tepper_Report.pdf" target="_blank" class="report-link">
+                            📊 2022-2023 Report
+                        </a>
                         <a href="https://socentlawtracker.org/wp-content/uploads/2022/08/2021-2022_Grunin_Tepper_Report.pdf" target="_blank" class="report-link">
                             📊 2021-2022 Report
                         </a>
@@ -631,20 +773,12 @@
         
         const legislativeData = {
           "2008": {
-            // No verified data yet for 2008
-          },
-          
-          "2008": {
             "VT": { "forms": ["L3C"], "failed": [], "rescinded": [] }
           },
           
           "2009": {
             "UT": { "forms": ["L3C"], "failed": [], "rescinded": [] },
             "VT": { "forms": ["BCORP"], "failed": [], "rescinded": [] }
-          },
-          
-          "2010": {
-            // No legislative activity in 2010
           },
           
           "2010": {
@@ -722,10 +856,6 @@
             "IN": { "forms": ["BCORP"], "failed": [], "rescinded": [] },
             "TN": { "forms": ["BCORP"], "failed": [], "rescinded": [] },
             "WI": { "forms": [], "failed": ["L3C"], "rescinded": [] }
-          },
-          
-          "2016": {
-            // No legislative activity in 2016
           },
           
           "2016": {
@@ -899,21 +1029,23 @@
                 this.setupControls();
                 this.createStateMarkers();
                 this.updateDisplay();
-                this.updateStats();
+                this.updateFormBars();
             }
 
             initializeMap() {
+                const isMobile = window.innerWidth <= 768;
+                
                 this.map = L.map('map', {
-                    center: [38.0, -97.0],
-                    zoom: 4.5,
-                    minZoom: 4.5,
-                    maxZoom: 4.5,
+                    center: isMobile ? [39.5, -98.0] : [38.0, -97.0],
+                    zoom: isMobile ? 3.5 : 4.5,
+                    minZoom: isMobile ? 3.5 : 4.5,
+                    maxZoom: isMobile ? 3.5 : 4.5,
                     zoomControl: false,
                     scrollWheelZoom: false,
                     doubleClickZoom: false,
                     boxZoom: false,
                     keyboard: false,
-                    dragging: false,
+                    dragging: isMobile,  // Allow dragging on mobile only
                     touchZoom: false,
                     tap: true
                 });
@@ -921,6 +1053,15 @@
                 L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
                     attribution: '© OpenStreetMap contributors'
                 }).addTo(this.map);
+                
+                // Invalidate size on orientation change for mobile
+                if (isMobile) {
+                    window.addEventListener('orientationchange', () => {
+                        setTimeout(() => {
+                            this.map.invalidateSize();
+                        }, 100);
+                    });
+                }
             }
 
             setupControls() {
@@ -939,7 +1080,7 @@
                 yearSelect.addEventListener('change', (e) => {
                     this.currentYear = parseInt(e.target.value);
                     this.updateDisplay();
-                    this.updateStats();
+                    this.updateFormBars();
                 });
             }
 
@@ -1059,7 +1200,7 @@
 
             updateDisplay() {
                 this.map.closePopup();
-                document.getElementById('statsTitle').textContent = `${this.currentYear} Status Summary`;
+                document.getElementById('yearBadge').textContent = this.currentYear;
                 
                 this.stateMarkers.forEach((marker, stateCode) => {
                     const activity = getStateActivity(stateCode, this.currentYear);
@@ -1068,46 +1209,60 @@
                 });
             }
 
-            updateStats() {
+            updateFormBars() {
                 const allStates = Array.from(this.stateMarkers.keys());
                 
-                // Group states by available forms
-                const formsByType = {};
+                // Count states for each form type
+                const formCounts = {};
                 
                 allStates.forEach(stateCode => {
                     const activity = getStateActivity(stateCode, this.currentYear);
-                    
                     activity.availableForms.forEach(form => {
-                        if (!formsByType[form]) {
-                            formsByType[form] = [];
+                        if (!formCounts[form]) {
+                            formCounts[form] = 0;
                         }
-                        formsByType[form].push(stateCode);
+                        formCounts[form]++;
                     });
                 });
 
-                // Sort forms by number of states (most popular first)
-                const sortedForms = Object.entries(formsByType).sort((a, b) => b[1].length - a[1].length);
-
-                let statsHtml = '';
+                // Sort forms by count
+                const sortedForms = Object.entries(formCounts).sort((a, b) => b[1] - a[1]);
+                
+                // Create visual bars
+                const formsVisual = document.getElementById('formsVisual');
+                formsVisual.innerHTML = '';
                 
                 if (sortedForms.length === 0) {
-                    statsHtml = `<div class="no-forms-message">No social enterprise forms available in ${this.currentYear}</div>`;
+                    formsVisual.innerHTML = '<div style="color: #999; font-style: italic;">No forms available in ' + this.currentYear + '</div>';
                 } else {
-                    sortedForms.forEach(([formCode, states]) => {
-                        const formName = corporateForms[formCode] || formCode;
-                        const statesList = states.sort().join(', ');
-                        const stateCount = states.length === 1 ? '1 State' : `${states.length} States`;
+                    const maxCount = sortedForms[0][1];
+                    
+                    sortedForms.forEach(([formCode, count]) => {
+                        const height = Math.max(10, (count / maxCount) * 100);
+                        const stateText = count === 1 ? '1 state' : `${count} states`;
                         
-                        statsHtml += `
-                            <div class="form-summary">
-                                <h3 class="form-title">${formCode} - ${formName}, ${stateCount}</h3>
-                                <div class="form-states">${statesList}</div>
+                        const formBar = document.createElement('div');
+                        formBar.className = 'form-bar';
+                        formBar.dataset.formtype = formCode;
+                        formBar.onclick = () => {
+                            window.location.href = `forms/${formCode.toLowerCase()}.html`;
+                        };
+                        
+                        formBar.innerHTML = `
+                            <div class="form-bar-wrapper">
+                                <div class="form-bar-count">${count}</div>
+                                <div class="form-bar-fill" style="height: ${height}px;"></div>
+                                <div class="form-bar-label">
+                                    ${formCode}
+                                    <div class="form-bar-states">${stateText}</div>
+                                    <div class="click-hint">Click for timeline →</div>
+                                </div>
                             </div>
                         `;
+                        
+                        formsVisual.appendChild(formBar);
                     });
                 }
-
-                document.getElementById('statsSummary').innerHTML = statsHtml;
             }
         }
 
