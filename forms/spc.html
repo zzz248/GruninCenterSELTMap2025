@@ -190,46 +190,31 @@
         }
 
         .state-pill {
-            background: linear-gradient(135deg, #00abce, #73a535);
-            color: white;
-            padding: 8px 16px;
+            background: white;
+            color: #73a535;
+            border: 2px solid #73a535;
+            padding: 6px 14px;
             border-radius: 20px;
             font-size: 0.9em;
             font-weight: 500;
             text-decoration: none;
             display: inline-block;
             transition: all 0.2s ease;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
             cursor: pointer;
         }
 
         .state-pill:hover {
-            transform: scale(1.05) translateY(-2px);
-            box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+            background: #73a535;
+            color: white;
+            transform: translateY(-2px);
+            box-shadow: 0 3px 8px rgba(0,0,0,0.2);
         }
 
         .no-activity {
             color: #999;
             font-style: italic;
             padding: 10px;
-        }
-
-        .info-section {
-            background: rgba(115,165,53,0.1);
-            border-left: 4px solid #73a535;
-            padding: 20px;
-            margin-bottom: 30px;
-            border-radius: 12px;
-        }
-
-        .info-section h3 {
-            color: #73a535;
-            margin-bottom: 10px;
-        }
-
-        .info-section p {
-            color: #666;
-            line-height: 1.6;
         }
 
         .summary-section {
@@ -281,7 +266,9 @@
             .all-states-grid {
                 grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
             }
-        } .back-button-float {
+        }
+
+        .back-button-float {
             position: fixed;
             bottom: 20px;
             left: 20px;
@@ -304,8 +291,8 @@
     </style>
 </head>
 <body>
-       <a href="../index.html" class="back-button-float">← Map</a>
- <div class="container">
+    <a href="../index.html" class="back-button-float">← Map</a>
+    <div class="container">
         <a href="../index.html" class="back-button">← Back to SELT Map</a>
         
         <div class="header-section">
@@ -335,19 +322,12 @@
             </div>
         </div>
 
-        <div class="info-section">
-            <h3>💡 About Social Purpose Corporations</h3>
-            <p>SPCs offer a middle ground between traditional corporations and benefit corporations. While benefit corporations must pursue general public benefit, SPCs can focus on specific social or environmental purposes defined in their articles of incorporation. This targeted approach appeals to companies with focused missions that don't necessarily encompass broad public benefit.</p>
-        </div>
-
         <div class="timeline-section">
             <h2>Legislative Timeline</h2>
             
             <div class="timeline-year">
                 <div class="year-header">
                     <span class="year-number">2011</span>
-                    <span class="state-count">1 state</span>
-                    <span class="new-badge">First!</span>
                 </div>
                 <div class="states-grid">
                     <a href="../states/ca.html" class="state-pill">California</a>
@@ -357,7 +337,6 @@
             <div class="timeline-year">
                 <div class="year-header">
                     <span class="year-number">2012</span>
-                    <span class="state-count">0 states</span>
                 </div>
                 <div class="no-activity">No new SPC legislation enacted this year</div>
             </div>
@@ -365,7 +344,6 @@
             <div class="timeline-year">
                 <div class="year-header">
                     <span class="year-number">2013</span>
-                    <span class="state-count">2 states</span>
                 </div>
                 <div class="states-grid">
                     <a href="../states/wa.html" class="state-pill">Washington</a>
@@ -376,8 +354,6 @@
             <div class="timeline-year">
                 <div class="year-header">
                     <span class="year-number">2014</span>
-                    <span class="state-count">1 state</span>
-                    <span class="new-badge">Latest</span>
                 </div>
                 <div class="states-grid">
                     <a href="../states/fl.html" class="state-pill">Florida</a>
@@ -387,7 +363,6 @@
             <div class="timeline-year">
                 <div class="year-header">
                     <span class="year-number">2015-2024</span>
-                    <span class="state-count">0 states</span>
                 </div>
                 <div class="no-activity">No new SPC legislation has been enacted since 2014</div>
             </div>
