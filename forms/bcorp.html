@@ -1,0 +1,517 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Benefit Corporation (BCORP) - Legislative Timeline</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Frank+Ruhl+Libre:wght@400;500&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background: linear-gradient(135deg, #00abce 0%, #73a535 100%);
+            min-height: 100vh;
+            color: #333;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .back-button {
+            display: inline-block;
+            background: linear-gradient(135deg, #00abce, #73a535);
+            color: white;
+            padding: 12px 24px;
+            border-radius: 25px;
+            text-decoration: none;
+            font-weight: 500;
+            margin-bottom: 30px;
+            transition: transform 0.2s ease;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+        }
+
+        .back-button:hover {
+            transform: translateX(-5px);
+            background: linear-gradient(135deg, #925333, #73a535);
+        }
+
+        .header-section {
+            background: rgba(255,255,255,0.95);
+            border-radius: 20px;
+            padding: 30px;
+            margin-bottom: 30px;
+            backdrop-filter: blur(10px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        }
+
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: start;
+            gap: 30px;
+        }
+
+        .header-main {
+            flex: 1;
+        }
+
+        .header-main h1 {
+            color: #925333;
+            font-size: 2.5em;
+            margin-bottom: 15px;
+            font-weight: 700;
+        }
+
+        .form-abbr {
+            color: #73a535;
+            font-size: 0.7em;
+            font-weight: 500;
+        }
+
+        .header-main p {
+            color: #555;
+            font-size: 1.1em;
+            line-height: 1.6;
+            font-family: 'Frank Ruhl Libre', serif;
+        }
+
+        .quick-stats {
+            background: linear-gradient(135deg, #00abce, #73a535);
+            color: white;
+            padding: 25px;
+            border-radius: 15px;
+            min-width: 200px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+
+        .stat-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 12px;
+            padding-bottom: 12px;
+            border-bottom: 1px solid rgba(255,255,255,0.3);
+        }
+
+        .stat-row:last-child {
+            margin-bottom: 0;
+            padding-bottom: 0;
+            border-bottom: none;
+        }
+
+        .stat-label {
+            font-size: 0.9em;
+            opacity: 0.9;
+        }
+
+        .stat-value {
+            font-size: 1.3em;
+            font-weight: 700;
+        }
+
+        .timeline-section {
+            background: rgba(255,255,255,0.95);
+            border-radius: 20px;
+            padding: 30px;
+            margin-bottom: 30px;
+            backdrop-filter: blur(10px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        }
+
+        .timeline-section h2 {
+            color: #925333;
+            font-size: 1.8em;
+            margin-bottom: 25px;
+            font-weight: 600;
+        }
+
+        .timeline-year {
+            background: rgba(255,255,255,0.8);
+            border-radius: 12px;
+            padding: 20px;
+            margin-bottom: 20px;
+            border-left: 4px solid #00abce;
+            transition: transform 0.2s ease;
+        }
+
+        .timeline-year:nth-child(even) {
+            border-left-color: #73a535;
+        }
+
+        .timeline-year:hover {
+            transform: translateX(5px);
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+
+        .year-header {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 15px;
+        }
+
+        .year-number {
+            font-size: 1.5em;
+            font-weight: 700;
+            color: #925333;
+        }
+
+        .state-count {
+            background: #73a535;
+            color: white;
+            padding: 4px 12px;
+            border-radius: 15px;
+            font-size: 0.85em;
+            font-weight: 500;
+        }
+
+        .new-badge {
+            background: #ff6b6b;
+            color: white;
+            padding: 4px 10px;
+            border-radius: 10px;
+            font-size: 0.75em;
+            font-weight: 600;
+            text-transform: uppercase;
+        }
+
+        .states-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .state-pill {
+            background: white;
+            color: #73a535;
+            border: 2px solid #73a535;
+            padding: 6px 14px;
+            border-radius: 20px;
+            font-size: 0.9em;
+            font-weight: 500;
+            text-decoration: none;
+            display: inline-block;
+            transition: all 0.2s ease;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+            cursor: pointer;
+        }
+
+        .state-pill:hover {
+            background: #73a535;
+            color: white;
+            transform: translateY(-2px);
+            box-shadow: 0 3px 8px rgba(0,0,0,0.2);
+        }
+
+        .no-activity {
+            color: #999;
+            font-style: italic;
+            padding: 10px;
+        }
+
+        .summary-section {
+            background: rgba(255,255,255,0.95);
+            border-radius: 20px;
+            padding: 30px;
+            backdrop-filter: blur(10px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        }
+
+        .current-states {
+            margin-top: 20px;
+        }
+
+        .current-states h3 {
+            color: #925333;
+            margin-bottom: 15px;
+            font-size: 1.3em;
+        }
+
+        .all-states-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+            gap: 10px;
+        }
+
+        .footer-note {
+            text-align: center;
+            color: white;
+            margin-top: 30px;
+            padding: 20px;
+            font-size: 0.9em;
+            opacity: 0.9;
+        }
+
+        @media (max-width: 768px) {
+            .header-content {
+                flex-direction: column;
+            }
+
+            .quick-stats {
+                width: 100%;
+            }
+
+            .header-main h1 {
+                font-size: 2em;
+            }
+
+            .all-states-grid {
+                grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <a href="../index.html" class="back-button">← Back to SELT Map</a>
+        
+        <div class="header-section">
+            <div class="header-content">
+                <div class="header-main">
+                    <h1>Benefit Corporation <span class="form-abbr">(BCORP)</span></h1>
+                    <p>The most widely adopted social enterprise form, benefit corporations are required to pursue general public benefit alongside profit. Directors must consider stakeholder interests beyond shareholders in decision-making. The benefit corporation represents a fundamental shift in corporate governance, allowing companies to embed social and environmental considerations into their legal DNA.</p>
+                </div>
+                <div class="quick-stats">
+                    <div class="stat-row">
+                        <span class="stat-label">Total States</span>
+                        <span class="stat-value">37</span>
+                    </div>
+                    <div class="stat-row">
+                        <span class="stat-label">First Enacted</span>
+                        <span class="stat-value">2009</span>
+                    </div>
+                    <div class="stat-row">
+                        <span class="stat-label">Latest</span>
+                        <span class="stat-value">2021</span>
+                    </div>
+                    <div class="stat-row">
+                        <span class="stat-label">Coverage</span>
+                        <span class="stat-value">74%</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="timeline-section">
+            <h2>Legislative Timeline</h2>
+            
+            <div class="timeline-year">
+                <div class="year-header">
+                    <span class="year-number">2009</span>
+                    <span class="state-count">1 state</span>
+                    <span class="new-badge">First!</span>
+                </div>
+                <div class="states-grid">
+                    <a href="../states/vt.html" class="state-pill">Vermont</a>
+                </div>
+            </div>
+
+            <div class="timeline-year">
+                <div class="year-header">
+                    <span class="year-number">2010</span>
+                    <span class="state-count">1 state</span>
+                </div>
+                <div class="states-grid">
+                    <a href="../states/md.html" class="state-pill">Maryland</a>
+                </div>
+            </div>
+
+            <div class="timeline-year">
+                <div class="year-header">
+                    <span class="year-number">2011</span>
+                    <span class="state-count">0 states</span>
+                </div>
+                <div class="no-activity">No new benefit corporation legislation enacted this year</div>
+            </div>
+
+            <div class="timeline-year">
+                <div class="year-header">
+                    <span class="year-number">2012</span>
+                    <span class="state-count">4 states</span>
+                </div>
+                <div class="states-grid">
+                    <a href="../states/ca.html" class="state-pill">California</a>
+                    <a href="../states/la.html" class="state-pill">Louisiana</a>
+                    <a href="../states/sc.html" class="state-pill">South Carolina</a>
+                    <a href="../states/pa.html" class="state-pill">Pennsylvania</a>
+                </div>
+            </div>
+
+            <div class="timeline-year">
+                <div class="year-header">
+                    <span class="year-number">2013</span>
+                    <span class="state-count">11 states</span>
+                    <span class="new-badge">Peak Year!</span>
+                </div>
+                <div class="states-grid">
+                    <a href="../states/de.html" class="state-pill">Delaware</a>
+                    <a href="../states/ar.html" class="state-pill">Arkansas</a>
+                    <a href="../states/il.html" class="state-pill">Illinois</a>
+                    <a href="../states/va.html" class="state-pill">Virginia</a>
+                    <a href="../states/md.html" class="state-pill">Maryland</a>
+                    <a href="../states/nj.html" class="state-pill">New Jersey</a>
+                    <a href="../states/pa.html" class="state-pill">Pennsylvania</a>
+                    <a href="../states/ny.html" class="state-pill">New York</a>
+                    <a href="../states/ct.html" class="state-pill">Connecticut</a>
+                    <a href="../states/ri.html" class="state-pill">Rhode Island</a>
+                    <a href="../states/ma.html" class="state-pill">Massachusetts</a>
+                </div>
+            </div>
+
+            <div class="timeline-year">
+                <div class="year-header">
+                    <span class="year-number">2014</span>
+                    <span class="state-count">8 states</span>
+                </div>
+                <div class="states-grid">
+                    <a href="../states/ut.html" class="state-pill">Utah</a>
+                    <a href="../states/or.html" class="state-pill">Oregon</a>
+                    <a href="../states/nv.html" class="state-pill">Nevada</a>
+                    <a href="../states/az.html" class="state-pill">Arizona</a>
+                    <a href="../states/ne.html" class="state-pill">Nebraska</a>
+                    <a href="../states/fl.html" class="state-pill">Florida</a>
+                    <a href="../states/wv.html" class="state-pill">West Virginia</a>
+                    <a href="../states/nh.html" class="state-pill">New Hampshire</a>
+                </div>
+            </div>
+
+            <div class="timeline-year">
+                <div class="year-header">
+                    <span class="year-number">2015</span>
+                    <span class="state-count">5 states</span>
+                </div>
+                <div class="states-grid">
+                    <a href="../states/id.html" class="state-pill">Idaho</a>
+                    <a href="../states/mt.html" class="state-pill">Montana</a>
+                    <a href="../states/mn.html" class="state-pill">Minnesota</a>
+                    <a href="../states/in.html" class="state-pill">Indiana</a>
+                    <a href="../states/tn.html" class="state-pill">Tennessee</a>
+                </div>
+            </div>
+
+            <div class="timeline-year">
+                <div class="year-header">
+                    <span class="year-number">2016</span>
+                    <span class="state-count">0 states</span>
+                </div>
+                <div class="no-activity">No new benefit corporation legislation enacted this year</div>
+            </div>
+
+            <div class="timeline-year">
+                <div class="year-header">
+                    <span class="year-number">2017</span>
+                    <span class="state-count">4 states</span>
+                </div>
+                <div class="states-grid">
+                    <a href="../states/ks.html" class="state-pill">Kansas</a>
+                    <a href="../states/tx.html" class="state-pill">Texas</a>
+                    <a href="../states/wi.html" class="state-pill">Wisconsin</a>
+                    <a href="../states/ky.html" class="state-pill">Kentucky</a>
+                </div>
+            </div>
+
+            <div class="timeline-year">
+                <div class="year-header">
+                    <span class="year-number">2018</span>
+                    <span class="state-count">0 states</span>
+                </div>
+                <div class="no-activity">No new benefit corporation legislation enacted this year</div>
+            </div>
+
+            <div class="timeline-year">
+                <div class="year-header">
+                    <span class="year-number">2019</span>
+                    <span class="state-count">2 states</span>
+                </div>
+                <div class="states-grid">
+                    <a href="../states/ok.html" class="state-pill">Oklahoma</a>
+                    <a href="../states/me.html" class="state-pill">Maine</a>
+                </div>
+            </div>
+
+            <div class="timeline-year">
+                <div class="year-header">
+                    <span class="year-number">2020</span>
+                    <span class="state-count">4 states</span>
+                </div>
+                <div class="states-grid">
+                    <a href="../states/nm.html" class="state-pill">New Mexico</a>
+                    <a href="../states/al.html" class="state-pill">Alabama</a>
+                    <a href="../states/ga.html" class="state-pill">Georgia</a>
+                    <a href="../states/oh.html" class="state-pill">Ohio</a>
+                </div>
+            </div>
+
+            <div class="timeline-year">
+                <div class="year-header">
+                    <span class="year-number">2021</span>
+                    <span class="state-count">1 state</span>
+                    <span class="new-badge">Latest</span>
+                </div>
+                <div class="states-grid">
+                    <a href="../states/ia.html" class="state-pill">Iowa</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="summary-section">
+            <div class="current-states">
+                <h3>All States with Benefit Corporation Legislation (as of 2024)</h3>
+                <div class="all-states-grid">
+                    <a href="../states/al.html" class="state-pill">Alabama</a>
+                    <a href="../states/az.html" class="state-pill">Arizona</a>
+                    <a href="../states/ar.html" class="state-pill">Arkansas</a>
+                    <a href="../states/ca.html" class="state-pill">California</a>
+                    <a href="../states/ct.html" class="state-pill">Connecticut</a>
+                    <a href="../states/de.html" class="state-pill">Delaware</a>
+                    <a href="../states/fl.html" class="state-pill">Florida</a>
+                    <a href="../states/ga.html" class="state-pill">Georgia</a>
+                    <a href="../states/id.html" class="state-pill">Idaho</a>
+                    <a href="../states/il.html" class="state-pill">Illinois</a>
+                    <a href="../states/in.html" class="state-pill">Indiana</a>
+                    <a href="../states/ia.html" class="state-pill">Iowa</a>
+                    <a href="../states/ks.html" class="state-pill">Kansas</a>
+                    <a href="../states/ky.html" class="state-pill">Kentucky</a>
+                    <a href="../states/la.html" class="state-pill">Louisiana</a>
+                    <a href="../states/me.html" class="state-pill">Maine</a>
+                    <a href="../states/md.html" class="state-pill">Maryland</a>
+                    <a href="../states/ma.html" class="state-pill">Massachusetts</a>
+                    <a href="../states/mn.html" class="state-pill">Minnesota</a>
+                    <a href="../states/mt.html" class="state-pill">Montana</a>
+                    <a href="../states/ne.html" class="state-pill">Nebraska</a>
+                    <a href="../states/nv.html" class="state-pill">Nevada</a>
+                    <a href="../states/nh.html" class="state-pill">New Hampshire</a>
+                    <a href="../states/nj.html" class="state-pill">New Jersey</a>
+                    <a href="../states/nm.html" class="state-pill">New Mexico</a>
+                    <a href="../states/ny.html" class="state-pill">New York</a>
+                    <a href="../states/oh.html" class="state-pill">Ohio</a>
+                    <a href="../states/ok.html" class="state-pill">Oklahoma</a>
+                    <a href="../states/or.html" class="state-pill">Oregon</a>
+                    <a href="../states/pa.html" class="state-pill">Pennsylvania</a>
+                    <a href="../states/ri.html" class="state-pill">Rhode Island</a>
+                    <a href="../states/sc.html" class="state-pill">South Carolina</a>
+                    <a href="../states/tn.html" class="state-pill">Tennessee</a>
+                    <a href="../states/tx.html" class="state-pill">Texas</a>
+                    <a href="../states/ut.html" class="state-pill">Utah</a>
+                    <a href="../states/vt.html" class="state-pill">Vermont</a>
+                    <a href="../states/va.html" class="state-pill">Virginia</a>
+                    <a href="../states/wv.html" class="state-pill">West Virginia</a>
+                    <a href="../states/wi.html" class="state-pill">Wisconsin</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer-note">
+            <p>Data maintained by the Grunin Center for Law and Social Entrepreneurship at NYU School of Law</p>
+        </div>
+    </div>
+</body>
+</html>
